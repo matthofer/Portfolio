@@ -1,9 +1,17 @@
+section {
+  display: flex;
+  justify-content: center;
+  background-color: #89bcd9;
+  padding: 0 60px;
+}
+
 .header {
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 128px;
-  background-color: #89bcd9;
+  width: 100%;
+  padding: 10px 64px;
   position: relative;
   z-index: 10;
   height: 109px;
@@ -14,7 +22,8 @@
     align-items: center;
     font-size: 16px;
     color: #f8f5ec;
-
+    text-decoration: none;
+    cursor: pointer;
     > img {
       height: 32px;
     }
@@ -35,7 +44,6 @@
   .nav-links {
     display: flex;
     gap: 100px;
-
     a {
       display: inline-block;
       position: relative;
@@ -45,11 +53,10 @@
       font-weight: 500;
       font-size: 26px;
       z-index: 1;
-
+      cursor: pointer;
       &.active {
         color: #f8f5ec;
         z-index: 1;
-
         &::before {
           content: "";
           position: absolute;
@@ -65,10 +72,13 @@
           z-index: -1;
         }
       }
-
       &:hover {
         color: #f8f5ec;
       }
     }
+  }
+
+  .de-en-switch {
+    cursor: pointer;
   }
 }

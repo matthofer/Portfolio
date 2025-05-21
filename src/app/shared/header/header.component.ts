@@ -18,7 +18,6 @@ export class HeaderComponent {
     for (let id of sectionIds) {
       const element = document.getElementById(id);
       if (!element) continue;
-
       const rect = element.getBoundingClientRect();
       if (rect.top <= 150 && rect.bottom >= 150) {
         this.activeSection = id;
@@ -26,9 +25,22 @@ export class HeaderComponent {
         break;
       }
     }
-
     if (!found) {
       this.activeSection = '';
     }
+  }
+
+  scrollToSection(id: string): void {
+    const target = document.getElementById(id);
+    if (target) {
+      const yOffset = -70;
+      const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
+  scrollToTop(event: Event): void {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

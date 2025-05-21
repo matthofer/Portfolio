@@ -11,21 +11,21 @@ section {
 }
 
 h2 {
-  margin-top: 100px;
+  margin-top: 130px;
   margin-bottom: 80px;
 }
 
 .text-container {
   display: flex;
   justify-content: center;
-  gap: 80px;
-  margin: 0 130px;
+  gap: 100px;
   .left-side {
     display: flex;
     justify-content: end;
     gap: 10px;
     width: 32%;
     font-size: 30px;
+    margin-top: 18px;
     > img {
       width: 70px;
       height: 60px;
@@ -38,12 +38,14 @@ h2 {
     display: flex;
     flex-direction: column;
     width: 32%;
-    height: 200px;
-    font-size: 18px;
+    font-size: 20px;
+    > span {
+      max-width: 1000px;
+    }
     .btn-container {
       display: flex;
       justify-content: end;
-      margin-top: 20px;
+      margin-top: 28px;
       text-decoration: none;
       > button {
         font-size: 17px;

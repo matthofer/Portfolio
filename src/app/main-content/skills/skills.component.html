@@ -1,1 +1,38 @@
-<p>skills works!</p>
+<section>
+  <h2 class="blue">My Skills</h2>
+  <div class="text-container">
+    <div class="left-side">
+      <img
+        *ngFor="let icon of skillIcons"
+        [src]="'./assets/img/icons/' + icon"
+        [alt]="icon"
+      />
+    </div>
+    <div class="right-side">
+      <img
+        class="bg-shape"
+        src="./assets/img/icons/skill-bg-shape.svg"
+        alt=""
+      />
+      <span>I am currently learning</span>
+      <div class="learn-icon-container">
+        <img
+          class="learn-icon"
+          src="./assets/img/icons/react-skill.svg"
+          alt=""
+        />
+        <img
+          class="learn-icon"
+          src="./assets/img/icons/vuejs-skill.svg"
+          alt=""
+        />
+      </div>
+      <span
+        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nam
+        veritatis pariatur tempora? Aut ipsum molestias fugiat, temporibus autem
+        quae eos facere. Est, magnam. Recusandae voluptatibus amet deserunt aut
+        non?</span
+      >
+    </div>
+  </div>
+</section>

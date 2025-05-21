@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { HeaderComponent } from '../shared/header/header.component';
 import { WhyMeComponent } from './why-me/why-me.component';
 
 @Component({
@@ -9,6 +10,7 @@ import { WhyMeComponent } from './why-me/why-me.component';
   imports: [
     CommonModule,
     LandingPageComponent,
+    HeaderComponent,
     WhyMeComponent,
   ],
   templateUrl: './main-content.component.html',

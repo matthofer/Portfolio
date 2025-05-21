@@ -12,7 +12,9 @@ export class LandingPageComponent {
   scrollToSection(id: string): void {
     const target = document.getElementById(id);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      const yOffset = -70;
+      const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   }
 

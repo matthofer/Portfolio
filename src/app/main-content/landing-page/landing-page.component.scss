@@ -4,6 +4,8 @@ section {
   justify-content: center;
   gap: 100px;
   margin-top: 100px;
+  margin-left: 32px;
+  margin-right: 32px;
 }
 
 .anta {
@@ -60,7 +62,7 @@ section {
     border-radius: 18px;
     transition: background-color 125ms ease-in-out;
     &:hover {
-      background-color: #354047;
+      background-color: #3d4a52;
       cursor: pointer;
     }
   }

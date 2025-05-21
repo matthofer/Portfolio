@@ -46,18 +46,17 @@ h2 {
       margin-top: 20px;
       text-decoration: none;
       > button {
-        width: 100px;
-        height: 38px;
-        border-radius: 20px;
+        font-size: 17px;
+        width: 120px;
+        height: 48px;
+        border-radius: 30px;
         background-color: transparent;
         color: #89bcd9;
         border: #89bcd9 solid 1px;
         transition: background-color 125ms ease-in-out;
         &:hover {
-          &:hover {
-            background-color: #354047;
-            cursor: pointer;
-          }
+          background-color: #3d4a52;
+          cursor: pointer;
         }
       }
     }

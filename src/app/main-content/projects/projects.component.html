@@ -1,1 +1,48 @@
-<p>projects works!</p>
+<section>
+  <h2 class="blue">My Projects</h2>
+  <div class="projects-section">
+    <div class="tab-bar">
+      <button
+        *ngFor="let project of projects"
+        (click)="setActiveTab(project.id)"
+        [class.active]="activeTab === project.id"
+      >
+        {{ project.title }}
+      </button>
+    </div>
+
+    <div
+      class="tab-content"
+      *ngFor="let project of projects"
+      [class.active]="activeTab === project.id"
+    >
+      <div class="container" *ngIf="activeTab === project.id">
+        <div class="project-detail">
+          <div class="text-box">
+            <div class="about-container">
+              <h3>About the project</h3>
+              <span>Duration: {{ project.duration }}</span>
+            </div>
+            <p>{{ project.description }}</p>
+            <div class="process-container">
+              <h3 class="mgn-bttm">How I organized my work process</h3>
+              <p>test</p>
+            </div>
+            <div class="experience-container">
+              <h3 class="mgn-bttm" *ngIf="project.group">
+                My group work experience
+              </h3>
+              <p *ngIf="project.group">{{ project.group }}</p>
+              <h3 class="mgn-bttm" *ngIf="project.solo">What I have learnt</h3>
+              <p *ngIf="project.solo">{{ project.solo }}</p>
+            </div>
+          </div>
+          <div class="image-box">
+            <img [src]="project.image" [alt]="project.title" />
+            <p *ngIf="project.id === 'ongoing'">Comming soon...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

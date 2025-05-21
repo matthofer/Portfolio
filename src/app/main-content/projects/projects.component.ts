@@ -35,7 +35,7 @@ export class ProjectsComponent {
       image: './assets/img/join.png',
       duration: '4 weeks',
       group:
-        'We were a group of 3. My role was the login and signup pages as well as reusable components. We had a great work flow and team spirit was always up.',
+        'We were a group of 3. My role was the login and signup pages as well as reusable components. We had a great work flow, good communication and team spirit was always up.',
       live: 'yes',
       technologies: [
         './assets/img/icons/html.svg',

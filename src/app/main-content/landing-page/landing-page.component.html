@@ -1,5 +1,5 @@
 <section>
-  <div class="right-side">
+  <div class="left-side">
     <img
       class="bg-shape"
       src="./assets/img/background-objs/bg-shape.svg"
@@ -7,7 +7,7 @@
     />
     <img class="portrait" src="./assets/img/portrait.png" alt="" />
   </div>
-  <div class="left-side">
+  <div class="right-side">
     <div class="logo-container">
       <img src="./assets/img/icons/logo-icon.svg" alt="" />
       <span class="anta">M.Hofer</span>
@@ -15,7 +15,9 @@
     </div>
     <h1 class="anta">Matthias Hofer</h1>
     <h3 class="anta">FRONTEND DEVELOPER</h3>
-    <img class="down-arrow" src="./assets/img/icons/arrow-down.svg" alt="" />
+    <a (click)="scrollToSection('why-me')">
+      <img class="down-arrow" src="./assets/img/icons/arrow-down.svg" alt="" />
+    </a>
   </div>
 </section>
 

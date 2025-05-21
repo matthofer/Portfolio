@@ -14,7 +14,7 @@ section {
   color: #89bcd9;
 }
 
-.right-side {
+.left-side {
   width: 596px;
   aspect-ratio: 1 / 1.2;
   overflow: hidden;
@@ -36,15 +36,16 @@ section {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-25deg);
-    width: 810px;
+    width: 809px;
     z-index: 1;
   }
 }
 
-.left-side {
+.right-side {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 40px;
   color: #f8f5ec;
   > h1 {
@@ -56,6 +57,12 @@ section {
   .down-arrow {
     margin-top: 100px;
     width: 38px;
+    border-radius: 18px;
+    transition: background-color 125ms ease-in-out;
+    &:hover {
+      background-color: #354047;
+      cursor: pointer;
+    }
   }
 }
 

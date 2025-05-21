@@ -19,27 +19,58 @@
       <div class="container" *ngIf="activeTab === project.id">
         <div class="project-detail">
           <div class="text-box">
-            <div class="about-container">
+            <div class="about-container icon-heading">
+              <img
+                class="heading-icon"
+                src="./assets/img/icons/headline-dot.svg"
+                alt="icon"
+              />
               <h3>About the project</h3>
               <span>Duration: {{ project.duration }}</span>
             </div>
             <p>{{ project.description }}</p>
-            <div class="process-container">
-              <h3 class="mgn-bttm">How I organized my work process</h3>
-              <p>test</p>
-            </div>
+            <p *ngIf="project.id === 'ongoing'">Stay tuned for Updates!</p>
             <div class="experience-container">
-              <h3 class="mgn-bttm" *ngIf="project.group">
-                My group work experience
-              </h3>
-              <p *ngIf="project.group">{{ project.group }}</p>
-              <h3 class="mgn-bttm" *ngIf="project.solo">What I have learnt</h3>
-              <p *ngIf="project.solo">{{ project.solo }}</p>
+              <div class="icon-heading" *ngIf="project.group">
+                <img
+                  class="heading-icon"
+                  src="./assets/img/icons/headline-dot.svg"
+                  alt="icon"
+                />
+                <h3>My group work experience</h3>
+              </div>
+              <p class="mgn-top" *ngIf="project.group">{{ project.group }}</p>
+
+              <div class="icon-heading" *ngIf="project.solo">
+                <img
+                  class="heading-icon"
+                  src="./assets/img/icons/headline-dot.svg"
+                  alt="icon"
+                />
+                <h3>What I have learnt</h3>
+              </div>
+              <p class="mgn-top" *ngIf="project.solo">{{ project.solo }}</p>
             </div>
           </div>
           <div class="image-box">
-            <img [src]="project.image" [alt]="project.title" />
-            <p *ngIf="project.id === 'ongoing'">Comming soon...</p>
+            <div class="image-wrapper">
+              <p>Technologies</p>
+              <div class="technologies-container" *ngIf="project.technologies">
+                <img
+                  *ngFor="let tech of project.technologies"
+                  [src]="tech"
+                  alt="Technology icon"
+                />
+              </div>
+              <img [src]="project.image" [alt]="project.title" />
+              <p class="overlay-text" *ngIf="project.id === 'ongoing'">
+                Coming soon...
+              </p>
+            </div>
+            <div class="btn-container">
+              <button class="liblue-bg" *ngIf="project.live">Live Test</button>
+              <button *ngIf="project.live">GitHub</button>
+            </div>
           </div>
         </div>
       </div>

@@ -9,6 +9,15 @@ section {
   color: #89bcd9;
 }
 
+.liblue-bg {
+  background-color: #89bcd9 !important;
+  color: #262e34 !important;
+  border: none !important;
+  &:hover {
+    background-color: #f8f5ec !important;
+  }
+}
+
 h2 {
   margin-bottom: 80px;
 }
@@ -27,8 +36,8 @@ p {
   font-size: 18px;
 }
 
-.mgn-bttm {
-  margin-bottom: 24px;
+.mgn-top {
+  margin-top: 24px;
 }
 
 .about-container {
@@ -39,11 +48,6 @@ p {
 
 .projects-section {
   width: 100%;
-  .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
   .tab-bar {
     display: flex;
     gap: 16px;
@@ -51,7 +55,7 @@ p {
     justify-content: center;
     width: 100%;
 
-    button {
+    > button {
       padding: 24px 40px;
       background-color: transparent;
       border: none;
@@ -76,27 +80,38 @@ p {
 
   .tab-content {
     display: none;
+    justify-content: center;
     width: 100%;
     height: 550px;
     background-color: #2d383f;
     padding: 40px 0;
     &.active {
-      display: block;
+      display: flex;
     }
 
     .container {
       max-width: 1440px;
-      margin: 0 auto;
-      padding: 0 24px;
+      margin: 0;
     }
   }
 
   .project-detail {
     display: flex;
-    gap: 18px;
+    gap: 64px;
     justify-content: center;
     flex-wrap: wrap;
+    .icon-heading {
+      position: relative;
+      display: flex;
+      align-items: center;
 
+      .heading-icon {
+        position: absolute;
+        left: -42px;
+        width: 20px;
+        height: 20px;
+      }
+    }
     .text-box {
       max-width: 400px;
       color: #f8f5ec;
@@ -105,10 +120,62 @@ p {
       gap: 20px;
     }
 
-    .image-box img {
-      max-width: 400px;
-      > p {
+    .image-box {
+      display: flex;
+      flex-direction: column;
+      .image-wrapper {
         position: relative;
+        width: 100%;
+        height: auto;
+        > p {
+          text-align: center;
+          color: #f8f5ec;
+        }
+        .technologies-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 28px;
+          margin-bottom: 20px;
+          > img {
+            height: 36px;
+          }
+        }
+        > img {
+          max-width: 400px;
+          display: block;
+        }
+        .overlay-text {
+          position: absolute;
+          top: 64%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #89bcd9;
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 32px;
+      > button {
+        font-size: 17px;
+        width: 120px;
+        height: 48px;
+        border-radius: 30px;
+        background-color: transparent;
+        color: #89bcd9;
+        border: #89bcd9 solid 1px;
+        transition: background-color 125ms ease-in-out;
+        &:hover {
+          background-color: #3d4a52;
+          cursor: pointer;
+        }
       }
     }
   }

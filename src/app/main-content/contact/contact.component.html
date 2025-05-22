@@ -1,1 +1,117 @@
-<p>contact works!</p>
+<section>
+  <h2 class="blue">Contact me</h2>
+  <div class="text-container">
+    <div class="text-left">
+      <span
+        >Contact me through this form, I am interested in hearing from you,
+        knowing your ideas and contributing to your projects with my work.</span
+      >
+      <span>Need a Frontend developer? <b>Contact me!</b></span>
+    </div>
+    <div class="text-right">
+      <div class="text-right-content">
+        <img src="./assets/img/icons/mail-icon-form.svg" alt="" />
+        <span>E-Mail: {{ email }}</span>
+      </div>
+      <div class="text-right-content">
+        <img src="./assets/img/icons/phone-icon-form.svg" alt="" />
+        <span>Tel: +43 650 28 23 069</span>
+      </div>
+    </div>
+  </div>
+  <form
+    (ngSubmit)="onSubmit(contactForm)"
+    #contactForm="ngForm"
+    class="contact-form"
+  >
+    <div class="mail-name-container">
+      <div class="input-group">
+        <label
+          for="fullName"
+          [class.error]="!fullNameRef.valid && fullNameRef.touched"
+        >
+          Your name
+          <span *ngIf="!fullNameRef.valid && fullNameRef.touched">
+            is required
+          </span>
+        </label>
+        <input
+          id="fullName"
+          type="text"
+          name="fullName"
+          [(ngModel)]="contactData.name"
+          required
+          #fullNameRef="ngModel"
+          minlength="2"
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="email" [class.error]="!emailRef.valid && emailRef.touched">
+          Your email
+          <span *ngIf="!emailRef.valid && emailRef.touched"> is invalid </span>
+        </label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          [(ngModel)]="contactData.email"
+          required
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          #emailRef="ngModel"
+        />
+      </div>
+    </div>
+    <div class="input-group full-width">
+      <label for="message" [class.error]="!message.valid && message.touched">
+        Your message
+        <span *ngIf="!message.valid && message.touched">is required</span>
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        [(ngModel)]="contactData.message"
+        required
+        minlength="8"
+        rows="5"
+        #message="ngModel"
+      ></textarea>
+    </div>
+
+    <div class="form-footer">
+      <label
+        class="privacy"
+        [class.error]="!privacyAccepted && contactForm.submitted"
+      >
+        <input
+          type="checkbox"
+          name="privacyPolicy"
+          [(ngModel)]="privacyAccepted"
+          required
+          #privacyRef="ngModel"
+        />
+
+        <span
+          class="custom-checkbox"
+          [ngClass]="{
+            checked: privacyAccepted,
+            hover: hoverPrivacy,
+            error: !privacyAccepted && submitted
+          }"
+          (mouseenter)="hoverPrivacy = true"
+          (mouseleave)="hoverPrivacy = false"
+        >
+        </span>
+
+        <span class="privacy-text">
+          I've read the <a href="/imprint">privacy policy</a> and agree to the
+          processing of my data as outlined.
+        </span>
+      </label>
+
+      <button type="submit" [disabled]="!contactForm.valid || !privacyAccepted">
+        Send
+      </button>
+    </div>
+  </form>
+</section>

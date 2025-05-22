@@ -20,7 +20,7 @@ export class LandingPageComponent implements AfterViewInit {
       const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
-    this.toggleMenu();
+    this.menuOpen = false;
   }
 
   ngAfterViewInit(): void {

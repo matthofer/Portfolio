@@ -32,4 +32,10 @@ export class LandingPageComponent implements AfterViewInit {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
+
+  activeLang: string = 'en';
+
+  setLanguage(lang: string): void {
+    this.activeLang = lang;
+  }
 }

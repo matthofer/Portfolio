@@ -33,7 +33,8 @@ export class HeaderComponent {
   scrollToSection(id: string): void {
     const target = document.getElementById(id);
     if (target) {
-      const yOffset = -70;
+      const isWideScreen = window.innerWidth <= 1080;
+      const yOffset = isWideScreen ? 20 : -70;
       const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -42,5 +43,11 @@ export class HeaderComponent {
   scrollToTop(event: Event): void {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  activeLang: string = 'en';
+
+  setLanguage(lang: string): void {
+    this.activeLang = lang;
   }
 }

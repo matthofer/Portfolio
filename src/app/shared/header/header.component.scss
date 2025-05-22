@@ -43,7 +43,7 @@ section {
 
   .nav-links {
     display: flex;
-    gap: 100px;
+    gap: clamp(0px, 4vw, 100px);
     a {
       display: inline-block;
       position: relative;
@@ -79,6 +79,49 @@ section {
   }
 
   .de-en-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Josefin Sans";
     cursor: pointer;
+
+    span {
+      position: relative;
+      padding: 10px;
+      color: #262e34;
+      transition: color 0.2s;
+
+      &.active {
+        color: #f8f5ec;
+        z-index: 1;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+          background-image: url("/assets/img/icons/ellipse-bg-shape.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          z-index: -1;
+        }
+      }
+
+      &:hover {
+        color: #f8f5ec;
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  section {
+    display: none;
   }
 }

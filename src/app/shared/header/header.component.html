@@ -31,7 +31,14 @@
       </nav>
     </div>
     <div>
-      <img class="de-en-switch" src="./assets/img/icons/en-active.svg" alt="" />
+      <div class="de-en-switch">
+        <span (click)="setLanguage('de')" [class.active]="activeLang === 'de'"
+          >DE</span
+        >
+        <span (click)="setLanguage('en')" [class.active]="activeLang === 'en'"
+          >EN</span
+        >
+      </div>
     </div>
   </header>
 </section>

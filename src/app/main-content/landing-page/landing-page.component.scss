@@ -38,6 +38,11 @@ section {
     transform: translate(-50%, -50%) rotate(-25deg);
     width: 814px;
     z-index: 1;
+    transition: transform 250ms ease, filter 250ms ease;
+  }
+  &:hover .bg-shape {
+    transform: translate(-50%, -48%) rotate(-14deg);
+    filter: brightness(1.04);
   }
 }
 

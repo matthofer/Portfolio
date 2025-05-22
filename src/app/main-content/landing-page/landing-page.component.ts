@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
@@ -8,7 +8,7 @@ import { HeaderComponent } from '../../shared/header/header.component';
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements AfterViewInit {
   scrollToSection(id: string): void {
     const target = document.getElementById(id);
     if (target) {
@@ -18,7 +18,9 @@ export class LandingPageComponent {
     }
   }
 
-  ngOnInit(): void {
-    window.scrollTo({ top: 0, behavior: 'auto' });
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }, 0);
   }
 }

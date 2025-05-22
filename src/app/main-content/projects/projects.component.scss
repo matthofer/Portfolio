@@ -187,7 +187,7 @@ p {
 }
 
 .btn-container-mobile {
-  display: flex;
+  display: none;
   justify-content: center;
   margin-top: 32px;
   gap: 20px;
@@ -226,6 +226,10 @@ p {
 
   .mgn-top {
     margin-top: 10px;
+  }
+
+  .btn-container-mobile {
+    display: flex;
   }
 
   p {

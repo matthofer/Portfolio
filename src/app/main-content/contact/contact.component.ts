@@ -11,11 +11,12 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  email = 'max-mustermann@gmail.com';
+  email = 'contact@matthias-hofer.com';
   privacyAccepted = false;
   hoverPrivacy = false;
   submitted = false;
   mailTest = true;
+  showToast = false;
 
   contactData = {
     name: '',
@@ -26,7 +27,7 @@ export class ContactComponent {
   http = inject(HttpClient);
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://matthias-hofer.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -54,6 +55,17 @@ export class ContactComponent {
           next: (response) => {
             console.log('Form data:', this.contactData);
             form.resetForm();
+            this.submitted = false;
+            this.showToast = true;
+            const scrollbarWidth =
+              window.innerWidth - document.documentElement.clientWidth;
+            document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+            setTimeout(() => {
+              this.showToast = false;
+              document.body.style.overflow = '';
+              document.body.style.paddingRight = '';
+            }, 3000);
           },
           error: (error) => {
             console.error(error);
@@ -63,6 +75,17 @@ export class ContactComponent {
     } else if (form.submitted && form.valid && this.mailTest) {
       console.log('Test mode – no data sent:', this.contactData);
       form.resetForm();
+      this.submitted = false;
+      this.showToast = true;
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      setTimeout(() => {
+        this.showToast = false;
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }, 3000);
     }
   }
 }

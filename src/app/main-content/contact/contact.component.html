@@ -49,7 +49,7 @@
       <div class="input-group">
         <label for="email" [class.error]="!emailRef.valid && emailRef.touched">
           Your email
-          <span *ngIf="!emailRef.valid && emailRef.touched"> is invalid </span>
+          <span *ngIf="!emailRef.valid && emailRef.touched"> is required </span>
         </label>
         <input
           id="email"
@@ -114,4 +114,7 @@
       </button>
     </div>
   </form>
+  <div *ngIf="showToast" class="toast-overlay">
+    <div class="toast">Message sent successfully!</div>
+  </div>
 </section>

@@ -10,11 +10,23 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
   activeTab = 'el-pollo';
+  isSmallScreen = window.innerWidth <= 1080;
+  isVerySmallScreen = window.innerWidth <= 530;
+
+  ngOnInit(): void {
+    this.checkScreenSize();
+    window.addEventListener('resize', this.checkScreenSize.bind(this));
+  }
+
+  checkScreenSize(): void {
+    this.isSmallScreen = window.innerWidth <= 1080;
+  }
 
   projects = [
     {
       id: 'el-pollo',
-      title: '1. El Pollo Loco',
+      number: '1. ',
+      title: 'El Pollo Loco',
       description:
         'A classical Jump’n’Run game using JavaScript, OOP and Canvas. Help Pepe to find coins and salsa bottles to fight off the evil chickens',
       image: './assets/img/el-pollo-loco.png',
@@ -26,10 +38,12 @@ export class ProjectsComponent {
         './assets/img/icons/javascript.svg',
         './assets/img/icons/css.svg',
       ],
+      technologiesText: ['HTML', ' JavaScript', ' CSS'],
     },
     {
       id: 'join',
-      title: '2. Join',
+      number: '2. ',
+      title: 'Join',
       description:
         'Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories',
       image: './assets/img/join.png',
@@ -43,10 +57,12 @@ export class ProjectsComponent {
         './assets/img/icons/css.svg',
         './assets/img/icons/firebase.svg',
       ],
+      technologiesText: ['HTML', ' JavaScript', ' CSS', ' Firebase'],
     },
     {
       id: 'pokedex',
-      title: '3. Pokedex',
+      number: '3. ',
+      title: 'Pokedex',
       description:
         'A simple library that provides and catalogues pokemon information, based on the PokeAPI',
       image: './assets/img/pokedex.png',
@@ -59,10 +75,12 @@ export class ProjectsComponent {
         './assets/img/icons/css.svg',
         './assets/img/icons/restapi.svg',
       ],
+      technologiesText: ['HTML', ' JavaScript', ' CSS', ' RestAPI'],
     },
     {
       id: 'ongoing',
-      title: '4. Ongoing Project',
+      number: '4. ',
+      title: 'Ongoing Project',
       description:
         'Slack Clone App - Messaging Tool for Businesses using Firebase and Angular.',
       image: './assets/img/ongoing.png',
@@ -73,6 +91,7 @@ export class ProjectsComponent {
         './assets/img/icons/css.svg',
         './assets/img/icons/firebase.svg',
       ],
+      technologiesText: ['Angular', ' TypeScript', ' SCSS', ' Firebase'],
     },
   ];
 

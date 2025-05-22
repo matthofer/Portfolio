@@ -44,3 +44,9 @@ h2 {
   background: #89bcd965;
   border-radius: 4px;
 }
+
+@media (max-width: 1080px) {
+  h2 {
+    font-size: 32px;
+  }
+}

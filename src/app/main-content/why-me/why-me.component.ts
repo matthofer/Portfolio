@@ -5,8 +5,16 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './why-me.component.html',
-  styleUrl: './why-me.component.scss'
+  styleUrl: './why-me.component.scss',
 })
 export class WhyMeComponent {
-
+  scrollToSection(id: string): void {
+    const target = document.getElementById(id);
+    if (target) {
+      const isWideScreen = window.innerWidth <= 1080;
+      const yOffset = isWideScreen ? 20 : -70;
+      const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
 }

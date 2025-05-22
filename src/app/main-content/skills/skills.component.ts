@@ -21,4 +21,14 @@ export class SkillsComponent {
     'material-skill.svg',
     'scrum-skill.svg',
   ];
+
+  scrollToSection(id: string): void {
+    const target = document.getElementById(id);
+    if (target) {
+      const isWideScreen = window.innerWidth <= 1080;
+      const yOffset = isWideScreen ? 20 : -70;
+      const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
 }

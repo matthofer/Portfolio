@@ -65,3 +65,68 @@ h2 {
     }
   }
 }
+
+.btn-container {
+  display: none;
+  justify-content: center;
+  margin-top: 10px;
+  text-decoration: none;
+  > button {
+    font-size: 17px;
+    width: 120px;
+    height: 48px;
+    border-radius: 30px;
+    background-color: #89bcd9;
+    color: #262e34;
+    border: none;
+    transition: background-color 125ms ease-in-out;
+    &:hover {
+      background-color: #f8f5ec;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  h2 {
+    margin-bottom: 40px;
+  }
+  section {
+    padding-top: 50px;
+    margin-bottom: 20px;
+  }
+  .text-container {
+    flex-direction: column;
+    gap: 40px;
+    .right-side {
+      height: 300px;
+      width: 340px;
+      margin: 0 auto;
+    }
+  }
+  .btn-container {
+    display: flex;
+  }
+}
+
+@media (max-width: 700px) {
+  .text-container {
+    .left-side {
+      gap: 20px;
+      max-width: 300px;
+      margin: 0 auto;
+      > img {
+        height: 60px;
+      }
+    }
+    .right-side {
+      width: 280px;
+      font-size: 16px;
+      .learn-icon-container {
+        .learn-icon {
+          height: 54px;
+        }
+      }
+    }
+  }
+}

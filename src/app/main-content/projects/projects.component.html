@@ -3,20 +3,27 @@
   <div class="projects-section">
     <div class="tab-bar">
       <button
-        *ngFor="let project of projects"
+        *ngFor="let project of projects; let i = index"
         (click)="setActiveTab(project.id)"
         [class.active]="activeTab === project.id"
       >
-        {{ project.title }}
+        {{
+          isSmallScreen ? i + 1 + ". Project" : project.number + project.title
+        }}
       </button>
     </div>
 
     <div
       class="tab-content"
+      [class.brd-rad-right]="isVerySmallScreen && project.id === 'ongoing'"
+      [class.brd-rad-left]="isVerySmallScreen && project.id === 'el-pollo'"
       *ngFor="let project of projects"
       [class.active]="activeTab === project.id"
     >
       <div class="container" *ngIf="activeTab === project.id">
+        <h3 class="mobile-text-header" *ngIf="isSmallScreen">
+          {{ project.title }}
+        </h3>
         <div class="project-detail">
           <div class="text-box">
             <div class="about-container icon-heading">
@@ -26,7 +33,9 @@
                 alt="icon"
               />
               <h3>About the project</h3>
-              <span>Duration: {{ project.duration }}</span>
+              <span class="mobile-d-none"
+                >Duration: {{ project.duration }}</span
+              >
             </div>
             <p>{{ project.description }}</p>
             <p *ngIf="project.id === 'ongoing'">Stay tuned for Updates!</p>
@@ -54,7 +63,13 @@
           </div>
           <div class="image-box">
             <div class="image-wrapper">
-              <p>Technologies</p>
+              <p class="mobile-d-none">Technologies</p>
+              <p *ngIf="isSmallScreen">
+                Technologies: {{ project.technologiesText }}
+              </p>
+              <span *ngIf="isSmallScreen"
+                >Duration: {{ project.duration }}</span
+              >
               <div class="technologies-container" *ngIf="project.technologies">
                 <img
                   *ngFor="let tech of project.technologies"
@@ -72,6 +87,10 @@
               <button *ngIf="project.live">GitHub</button>
             </div>
           </div>
+        </div>
+        <div class="btn-container-mobile">
+          <button class="liblue-bg" *ngIf="project.live">Live Test</button>
+          <button *ngIf="project.live">GitHub</button>
         </div>
       </div>
     </div>

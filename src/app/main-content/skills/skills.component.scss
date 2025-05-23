@@ -65,6 +65,15 @@ h2 {
     }
   }
 }
+
+.right-side:hover .bg-shape {
+  animation: rotateAndTint 125ms ease forwards;
+}
+
+.right-side .bg-shape {
+  animation: unRotateAndTint 125ms ease forwards;
+}
+
 .btn-wrapper {
   display: none;
   .btn-container {
@@ -87,6 +96,50 @@ h2 {
         cursor: pointer;
       }
     }
+  }
+}
+
+@keyframes rotateAndTint {
+  0% {
+    transform: rotate(0deg);
+    filter: brightness(1) sepia(0%) hue-rotate(0deg) saturate(100%);
+  }
+
+  30% {
+    transform: rotate(12deg);
+    filter: brightness(1.03) sepia(5%) hue-rotate(2deg) saturate(110%);
+  }
+
+  60% {
+    transform: rotate(24deg);
+    filter: brightness(1.06) sepia(7%) hue-rotate(4deg) saturate(115%);
+  }
+
+  100% {
+    transform: rotate(36deg);
+    filter: brightness(1.1) sepia(10%) hue-rotate(5deg) saturate(120%);
+  }
+}
+
+@keyframes unRotateAndTint {
+  0% {
+    transform: rotate(36deg);
+    filter: brightness(1.1) sepia(10%) hue-rotate(5deg) saturate(120%);
+  }
+
+  30% {
+    transform: rotate(24deg);
+    filter: brightness(1.06) sepia(7%) hue-rotate(4deg) saturate(115%);
+  }
+
+  60% {
+    transform: rotate(12deg);
+    filter: brightness(1.03) sepia(5%) hue-rotate(2deg) saturate(110%);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    filter: brightness(1) sepia(0%) hue-rotate(0deg) saturate(100%);
   }
 }
 

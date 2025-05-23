@@ -1,181 +1,186 @@
 <section>
-  <h2 class="blue">{{ "contact.title" | translate }}</h2>
-  <div class="text-container">
-    <div class="text-left">
-      <span>{{ "contact.intro1" | translate }}</span>
-      <span>{{ "contact.intro2" | translate }}</span>
-      <span class="blue"
-        ><b>{{ "contact.intro3" | translate }}</b></span
-      >
-    </div>
-    <div class="text-right">
-      <div class="text-right-content">
-        <img src="./assets/img/icons/mail-icon-form.svg" alt="" />
-        <span>E-Mail: {{ email }}</span>
-      </div>
-      <div class="text-right-content">
-        <img src="./assets/img/icons/phone-icon-form.svg" alt="" />
-        <span>Tel: +43 650 28 23 069</span>
-      </div>
-    </div>
-  </div>
-  <form
-    (ngSubmit)="onSubmit(contactForm)"
-    #contactForm="ngForm"
-    class="contact-form"
-  >
-    <div class="mail-name-container">
-      <div class="input-group">
-        <label
-          *ngIf="!isSmallScreen"
-          for="fullName"
-          [class.error]="!fullNameRef.valid && fullNameRef.touched"
+  <div class="content-wrapper">
+    <h2 class="blue">{{ "contact.title" | translate }}</h2>
+    <div class="text-container">
+      <div class="text-left">
+        <span>{{ "contact.intro1" | translate }}</span>
+        <span>{{ "contact.intro2" | translate }}</span>
+        <span class="blue"
+          ><b>{{ "contact.intro3" | translate }}</b></span
         >
-          {{ "contact.name" | translate }}
-          <span *ngIf="!fullNameRef.valid && fullNameRef.touched">
-            {{ "contact.required" | translate }}
-          </span>
-        </label>
-        <input
-          id="fullName"
-          type="text"
-          name="fullName"
-          [placeholder]="
-            isSmallScreen
-              ? !fullNameRef.valid && fullNameRef.touched
-                ? ('contact.requiredName' | translate)
-                : ('contact.name' | translate)
-              : ''
-          "
-          [(ngModel)]="contactData.name"
-          [class.error]="!fullNameRef.valid && fullNameRef.touched"
-          required
-          #fullNameRef="ngModel"
-          minlength="2"
-        />
       </div>
-
-      <div class="input-group">
-        <label
-          *ngIf="!isSmallScreen"
-          for="email"
-          [class.error]="!emailRef.valid && emailRef.touched"
-        >
-          {{ "contact.email" | translate }}
-          <span *ngIf="!emailRef.valid && emailRef.touched">
-            {{ "contact.required" | translate }}
-          </span>
-        </label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          [placeholder]="
-            isSmallScreen
-              ? !emailRef.valid && emailRef.touched
-                ? ('contact.requiredMail' | translate)
-                : ('contact.email' | translate)
-              : ''
-          "
-          [(ngModel)]="contactData.email"
-          [class.error]="!emailRef.valid && emailRef.touched"
-          required
-          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-          #emailRef="ngModel"
-        />
+      <div class="text-right">
+        <div class="text-right-content">
+          <img src="./assets/img/icons/mail-icon-form.svg" alt="" />
+          <span>E-Mail: {{ email }}</span>
+        </div>
+        <div class="text-right-content">
+          <img src="./assets/img/icons/phone-icon-form.svg" alt="" />
+          <span>Tel: +43 650 28 23 069</span>
+        </div>
       </div>
     </div>
-    <div class="input-group full-width">
-      <label
-        *ngIf="!isSmallScreen"
-        for="message"
-        [class.error]="!message.valid && message.touched"
-      >
-        {{ "contact.message" | translate }}
-        <span *ngIf="!message.valid && message.touched">{{
-          "contact.required" | translate
-        }}</span>
-      </label>
-      <textarea
-        id="message"
-        name="message"
-        [placeholder]="
-          isSmallScreen
-            ? !message.valid && message.touched
-              ? ('contact.requiredMessage' | translate)
-              : ('contact.message' | translate)
-            : ''
-        "
-        [(ngModel)]="contactData.message"
-        [class.error]="!message.valid && message.touched"
-        required
-        minlength="4"
-        rows="5"
-        #message="ngModel"
-      ></textarea>
-    </div>
-
-    <div class="form-footer">
-      <label
-        class="privacy"
-        [class.error]="!privacyAccepted && (privacyRef.touched || submitted)"
-      >
-        <input
-          type="checkbox"
-          name="privacyPolicy"
-          [(ngModel)]="privacyAccepted"
-          required
-          #privacyRef="ngModel"
-          (change)="privacyRef.control.markAsTouched()"
-        />
-
-        <span
-          class="custom-checkbox"
-          [ngClass]="{
-            checked: privacyAccepted,
-            hover: hoverPrivacy,
-            error: !privacyAccepted && (privacyRef.touched || submitted)
-          }"
-          (mouseenter)="hoverPrivacy = true"
-          (mouseleave)="hoverPrivacy = false"
-        >
-        </span>
-
-        <span class="privacy-text">
-          {{ "contact.privacyNotice1" | translate }}
-          <a href="/imprint">{{ "contact.privacyNotice2" | translate }}</a>
-          {{ "contact.privacyNotice3" | translate }}<br />
-          <br />
-          <span
-            class="error-privacy"
-            *ngIf="!privacyAccepted && (privacyRef.touched || submitted)"
+    <form
+      (ngSubmit)="onSubmit(contactForm)"
+      #contactForm="ngForm"
+      class="contact-form"
+    >
+      <div class="mail-name-container">
+        <div class="input-group">
+          <label
+            *ngIf="!isSmallScreen"
+            for="fullName"
+            [class.error]="!fullNameRef.valid && fullNameRef.touched"
           >
-            {{ "contact.privacyError" | translate }}
-          </span>
-        </span>
-      </label>
+            {{ "contact.name" | translate }}
+            <span *ngIf="!fullNameRef.valid && fullNameRef.touched">
+              {{ "contact.required" | translate }}
+            </span>
+          </label>
+          <input
+            id="fullName"
+            type="text"
+            name="fullName"
+            [placeholder]="
+              isSmallScreen
+                ? !fullNameRef.valid && fullNameRef.touched
+                  ? ('contact.requiredName' | translate)
+                  : ('contact.name' | translate)
+                : ''
+            "
+            [(ngModel)]="contactData.name"
+            [class.error]="!fullNameRef.valid && fullNameRef.touched"
+            required
+            #fullNameRef="ngModel"
+            minlength="2"
+          />
+        </div>
 
-      <div class="btn-container">
-        <button
-          type="submit"
-          [disabled]="!contactForm.valid || !privacyAccepted"
+        <div class="input-group">
+          <label
+            *ngIf="!isSmallScreen"
+            for="email"
+            [class.error]="!emailRef.valid && emailRef.touched"
+          >
+            {{ "contact.email" | translate }}
+            <span *ngIf="!emailRef.valid && emailRef.touched">
+              {{ "contact.required" | translate }}
+            </span>
+          </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            [placeholder]="
+              isSmallScreen
+                ? !emailRef.valid && emailRef.touched
+                  ? ('contact.requiredMail' | translate)
+                  : ('contact.email' | translate)
+                : ''
+            "
+            [(ngModel)]="contactData.email"
+            [class.error]="!emailRef.valid && emailRef.touched"
+            required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            #emailRef="ngModel"
+          />
+        </div>
+      </div>
+      <div class="input-group full-width">
+        <label
+          *ngIf="!isSmallScreen"
+          for="message"
+          [class.error]="!message.valid && message.touched"
         >
-          {{ "contact.send" | translate }}
-        </button>
+          {{ "contact.message" | translate }}
+          <span *ngIf="!message.valid && message.touched">{{
+            "contact.required" | translate
+          }}</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          [placeholder]="
+            isSmallScreen
+              ? !message.valid && message.touched
+                ? ('contact.requiredMessage' | translate)
+                : ('contact.message' | translate)
+              : ''
+          "
+          [(ngModel)]="contactData.message"
+          [class.error]="!message.valid && message.touched"
+          required
+          minlength="4"
+          rows="5"
+          #message="ngModel"
+        ></textarea>
+      </div>
+
+      <div class="form-footer">
+        <label
+          class="privacy"
+          [class.error]="!privacyAccepted && (privacyRef.touched || submitted)"
+        >
+          <input
+            type="checkbox"
+            name="privacyPolicy"
+            [(ngModel)]="privacyAccepted"
+            required
+            #privacyRef="ngModel"
+            (change)="privacyRef.control.markAsTouched()"
+          />
+
+          <span
+            class="custom-checkbox"
+            [ngClass]="{
+              checked: privacyAccepted,
+              hover: hoverPrivacy,
+              error: !privacyAccepted && (privacyRef.touched || submitted)
+            }"
+            (mouseenter)="hoverPrivacy = true"
+            (mouseleave)="hoverPrivacy = false"
+          >
+          </span>
+
+          <span class="privacy-text">
+            {{ "contact.privacyNotice1" | translate }}
+            <a href="/imprint">{{ "contact.privacyNotice2" | translate }}</a>
+            {{ "contact.privacyNotice3" | translate }}<br />
+            <br />
+            <span
+              class="error-privacy"
+              *ngIf="!privacyAccepted && (privacyRef.touched || submitted)"
+            >
+              {{ "contact.privacyError" | translate }}
+            </span>
+          </span>
+        </label>
+
+        <div class="btn-container">
+          <button
+            type="submit"
+            [disabled]="!contactForm.valid || !privacyAccepted"
+          >
+            {{ "contact.send" | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="up-arrow-btn">
+      <img
+        (click)="scrollToTop($event)"
+        src="./assets/img/icons/up-arrow.svg"
+        alt=""
+      />
+    </div>
+    <div *ngIf="showToast" class="toast-overlay">
+      <div class="toast">
+        {{ "contact.success" | translate }} <br />
+        <br />{{ "contact.thankyou" | translate }}
       </div>
     </div>
-  </form>
-  <div class="up-arrow-btn">
-    <img
-      (click)="scrollToTop($event)"
-      src="./assets/img/icons/up-arrow.svg"
-      alt=""
-    />
-  </div>
-  <div *ngIf="showToast" class="toast-overlay">
-    <div class="toast">
-      {{ "contact.success" | translate }} <br />
-      <br />{{ "contact.thankyou" | translate }}
-    </div>
+    <a (click)="scrollToTop($event)">
+      <img class="top-arrow" src="./assets/img/icons/arrow-down.svg" alt="" />
+    </a>
   </div>
 </section>

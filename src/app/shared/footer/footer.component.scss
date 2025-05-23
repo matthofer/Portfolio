@@ -91,3 +91,22 @@ footer {
     }
   }
 }
+
+@media (max-width: 1080px) {
+  footer {
+    margin-top: 100px;
+    height: 200px;
+    .content-wrapper {
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      gap: 24px;
+      .footer-left {
+        order: 3;
+        display: flex;
+        gap: 16px;
+        font-size: 14px;
+      }
+    }
+  }
+}

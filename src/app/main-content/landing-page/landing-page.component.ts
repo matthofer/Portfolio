@@ -13,6 +13,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class LandingPageComponent implements AfterViewInit {
   constructor(private translate: TranslateService) {}
   menuOpen = false;
+  activeLang: string = 'en';
+  currentIcon = 'assets/img/icons/burger-default.svg';
 
   scrollToSection(id: string): void {
     const target = document.getElementById(id);
@@ -31,11 +33,44 @@ export class LandingPageComponent implements AfterViewInit {
     }, 0);
   }
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
+  toggleMenu(): void {
+    if (!this.menuOpen) {
+      this.animateToClose();
+      this.menuOpen = true;
+    } else {
+      this.animateToBurger();
+      this.menuOpen = false;
+    }
   }
 
-  activeLang: string = 'en';
+  animateToClose(): void {
+    const frames = [
+      'assets/img/icons/burger-opening.svg',
+      'assets/img/icons/burger-closing.svg',
+      'assets/img/icons/burger-close.svg',
+    ];
+    this.playIconFrames(frames);
+  }
+
+  animateToBurger(): void {
+    const frames = [
+      'assets/img/icons/burger-closing.svg',
+      'assets/img/icons/burger-opening.svg',
+      'assets/img/icons/burger-default.svg',
+    ];
+    this.playIconFrames(frames);
+  }
+
+  playIconFrames(frames: string[]): void {
+    let i = 0;
+    const interval = setInterval(() => {
+      this.currentIcon = frames[i];
+      i++;
+      if (i === frames.length) {
+        clearInterval(interval);
+      }
+    }, 70);
+  }
 
   setLanguage(lang: string) {
     this.activeLang = lang;
@@ -47,5 +82,13 @@ export class LandingPageComponent implements AfterViewInit {
     const savedLang = localStorage.getItem('lang') || 'en';
     this.translate.use(savedLang);
     this.activeLang = savedLang;
+    window.addEventListener('resize', this.handleResize.bind(this));
+    this.handleResize();
+  }
+
+  handleResize(): void {
+    if (window.innerWidth >= 1080 && this.menuOpen) {
+      this.menuOpen = false;
+    }
   }
 }

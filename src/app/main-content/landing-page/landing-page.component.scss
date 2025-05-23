@@ -194,13 +194,12 @@ section {
   font-size: 20px;
   font-weight: 500;
   font-family: "Josefin Sans";
-  cursor: pointer;
-
   span {
     position: relative;
     padding: 10px;
     color: #262e34;
     transition: color 0.2s;
+    cursor: pointer;
 
     &.active {
       color: #f8f5ec;

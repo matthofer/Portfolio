@@ -43,7 +43,7 @@ section {
 
   .nav-links {
     display: flex;
-    gap: clamp(0px, 4vw, 100px);
+    gap: clamp(0px, 3vw, 100px);
     a {
       display: inline-block;
       position: relative;

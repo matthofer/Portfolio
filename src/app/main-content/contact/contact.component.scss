@@ -84,6 +84,12 @@ section {
       outline: none;
       box-shadow: none;
     }
+    &.error {
+      border-color: red;
+      &.error::placeholder {
+        color: red;
+      }
+    }
   }
   .form-footer {
     display: flex;
@@ -93,27 +99,27 @@ section {
     .privacy {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
       max-width: 60%;
-      font-size: 0.9rem;
       cursor: pointer;
     }
-    button {
-      font-size: 18px;
-      padding: 10px 30px;
-      background: transparent;
-      color: #89bcd9;
-      border: #89bcd9 solid 1px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 125ms ease-in-out;
-      &:disabled {
-        border-color: #8f9190;
-        color: #8f9190;
-        cursor: default;
-      }
-      &:not(:disabled):hover {
-        background-color: #3f454a;
+    .btn-container {
+      button {
+        font-size: 18px;
+        padding: 10px 30px;
+        background: transparent;
+        color: #89bcd9;
+        border: #89bcd9 solid 1px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 125ms ease-in-out;
+        &:disabled {
+          border-color: #8f9190;
+          color: #8f9190;
+          cursor: default;
+        }
+        &:not(:disabled):hover {
+          background-color: #3f454a;
+        }
       }
     }
   }
@@ -129,11 +135,12 @@ input[type="checkbox"] {
 
 .custom-checkbox {
   display: inline-block;
-  width: 24px;
   height: 24px;
+  width: 28px;
   background-image: url("/assets/img/icons/checkbox-empty.svg");
   background-size: cover;
   margin-right: 8px;
+  margin-bottom: 14px;
   cursor: pointer;
 
   &.hover {
@@ -145,13 +152,15 @@ input[type="checkbox"] {
   }
 
   &.error {
-    background-image: url("/assets/img/icons/checkbox-error.svg");
+    background-image: url("/assets/img/icons/checkbox-error.svg") !important;
   }
 }
 
 .privacy-text {
   color: #f8f5ec;
   font-size: 14px;
+  height: 28px;
+  width: 100%;
   > a {
     text-decoration: none;
     color: #89bcd9;
@@ -159,6 +168,11 @@ input[type="checkbox"] {
       color: #f8f5ec;
     }
   }
+}
+
+.error-privacy {
+  color: red;
+  font-size: 14px;
 }
 
 .toast-overlay {
@@ -174,14 +188,28 @@ input[type="checkbox"] {
   animation: fadeInOutOverlay 3s forwards;
   z-index: 999;
   .toast {
+    text-align: center;
     background-color: #89bcd9;
     color: #f8f5ec;
-    padding: 20px 36px;
-    border-radius: 30px;
+    padding: 24px 42px;
+    border-radius: 60px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     animation: fadeInOutToast 3s forwards;
-    font-size: 16px;
+    font-size: 18px;
     z-index: 1999;
+  }
+}
+
+.up-arrow-btn {
+  display: none;
+  margin-top: 72px;
+  > img {
+    border-radius: 18px;
+    transition: background-color 125ms ease-in-out;
+    &:hover {
+      background-color: #3d4a52;
+      cursor: pointer;
+    }
   }
 }
 
@@ -216,5 +244,69 @@ input[type="checkbox"] {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 1080px) {
+  section {
+    padding-top: 60px;
+  }
+
+  .text-container {
+    flex-direction: column-reverse;
+    max-width: 90%;
+    .text-left {
+      width: 100%;
+    }
+    .text-right {
+      flex-direction: column-reverse;
+      .text-right-content {
+        gap: 4px;
+        > img {
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    max-width: 90%;
+    .mail-name-container {
+      flex-direction: column;
+    }
+  }
+
+  .contact-form {
+    .form-footer {
+      flex-direction: column;
+      gap: 26px;
+      .privacy {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+  }
+
+  .up-arrow-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-form {
+    .form-footer {
+      gap: 58px;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .text-container {
+    font-size: 15.5px;
   }
 }

@@ -17,6 +17,21 @@ export class ContactComponent {
   submitted = false;
   mailTest = true;
   showToast = false;
+  isSmallScreen = window.innerWidth <= 1080;
+
+  ngOnInit(): void {
+    this.checkScreenSize();
+    window.addEventListener('resize', this.checkScreenSize.bind(this));
+  }
+
+  checkScreenSize(): void {
+    this.isSmallScreen = window.innerWidth <= 1080;
+  }
+
+  scrollToTop(event: Event): void {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   contactData = {
     name: '',
@@ -62,9 +77,9 @@ export class ContactComponent {
             document.body.style.overflow = 'hidden';
             document.body.style.paddingRight = `${scrollbarWidth}px`;
             setTimeout(() => {
-              this.showToast = false;
               document.body.style.overflow = '';
               document.body.style.paddingRight = '';
+              this.showToast = false;
             }, 3000);
           },
           error: (error) => {

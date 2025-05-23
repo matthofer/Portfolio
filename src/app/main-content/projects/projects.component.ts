@@ -20,6 +20,7 @@ export class ProjectsComponent {
 
   checkScreenSize(): void {
     this.isSmallScreen = window.innerWidth <= 1080;
+    this.isVerySmallScreen = window.innerWidth <= 530;
   }
 
   projects = [

@@ -330,6 +330,9 @@ p {
 
 @media (max-width: 450px) {
   .projects-section {
+    .tab-content {
+      height: 738px;
+    }
     .project-detail {
       max-width: 280px !important;
       .image-box {

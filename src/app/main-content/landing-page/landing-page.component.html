@@ -85,10 +85,12 @@
 <nav class="mobile-nav" *ngIf="menuOpen">
   <img src="./assets/img/background-objs/bg-shape.png" alt="" />
   <div class="nav-content">
-    <a (click)="scrollToSection('why-me')">Why me</a>
-    <a (click)="scrollToSection('skills')">Skills</a>
-    <a (click)="scrollToSection('projects')">Projects</a>
-    <a (click)="scrollToSection('contact')">Contact</a>
+    <a (click)="scrollToSection('why-me')">{{ "nav.why" | translate }}</a>
+    <a (click)="scrollToSection('skills')">{{ "nav.skills" | translate }}</a>
+    <a (click)="scrollToSection('projects')">{{
+      "nav.projects" | translate
+    }}</a>
+    <a (click)="scrollToSection('contact')">{{ "nav.contact" | translate }}</a>
     <div class="de-en-switch">
       <span (click)="setLanguage('de')" [class.active]="activeLang === 'de'"
         >DE</span

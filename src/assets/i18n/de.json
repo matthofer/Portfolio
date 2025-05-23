@@ -36,7 +36,7 @@
     "group": "Meine Gruppenarbeit-Erfahrung",
     "solo": "Was ich gelernt habe",
     "technologies": "Technologien",
-    "comingSoon": "Kommt bald...",
+    "comingSoon": "Bald verfügbar...",
     "stayTuned": "Bleib dran für Updates!",
     "duration": "Dauer",
     "durationUnit": "Wochen",
@@ -66,14 +66,14 @@
     "title": "Meine Skills",
     "learning": "Ich lerne derzeit",
     "followup": "und freue mich darauf,<br>bald mehr zeigen<br>zu können.",
-    "talk": "Lass uns reden"
+    "talk": "Kontaktiere mich"
   },
   "why": {
     "title": "Warum ich",
     "location": "Ich wohne",
-    "text": "in der Nähe von Graz..|",
+    "text": "Nähe Graz..|",
     "reason": "Ich liebe Coden, weil es analytisches Denken mit Kreativität verbindet. Ich löse gerne Probleme, finde saubere Lösungen und verwandle Ideen in funktionierende Features. Ich bleibe dran, wenn es knifflig wird, und arbeite gerne im Team, um gemeinsam bessere Produkte zu entwickeln.",
-    "talk": "Lass uns reden"
+    "talk": "Kontaktiere mich"
   },
   "imprint": {
     "title": "Impressum",

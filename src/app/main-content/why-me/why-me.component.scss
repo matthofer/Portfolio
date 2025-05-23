@@ -18,12 +18,12 @@ h2 {
 .text-container {
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: 80px;
   .left-side {
     display: flex;
     justify-content: end;
-    gap: 10px;
-    width: 32%;
+    gap: 8px;
+    width: 36%;
     font-size: 30px;
     margin-top: 18px;
     > img {
@@ -37,7 +37,7 @@ h2 {
   .right-side {
     display: flex;
     flex-direction: column;
-    width: 32%;
+    width: 36%;
     font-size: 20px;
     > span {
       max-width: 1000px;
@@ -50,8 +50,8 @@ h2 {
       > button {
         font-family: "Josefin Sans";
         font-size: 17px;
-        width: 120px;
         height: 48px;
+        padding: 8px 20px;
         border-radius: 30px;
         background-color: transparent;
         color: #89bcd9;

@@ -1,43 +1,49 @@
 import { Component, HostListener } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  constructor(private translate: TranslateService) {}
   activeSection: string = '';
+  activeLang: string = 'en';
 
   @HostListener('window:scroll', [])
   onScroll(): void {
     const sectionIds = ['why-me', 'skills', 'projects', 'contact'];
-    let found = false;
+    const current = this.findActiveSection(sectionIds);
+    this.activeSection = current ?? '';
+  }
 
-    for (let id of sectionIds) {
-      const element = document.getElementById(id);
-      if (!element) continue;
-      const rect = element.getBoundingClientRect();
-      if (rect.top <= 150 && rect.bottom >= 150) {
-        this.activeSection = id;
-        found = true;
-        break;
-      }
+  findActiveSection(ids: string[]): string | null {
+    for (let id of ids) {
+      const el = document.getElementById(id);
+      if (el && this.isElementInView(el)) return id;
     }
-    if (!found) {
-      this.activeSection = '';
-    }
+    return null;
+  }
+
+  isElementInView(el: HTMLElement): boolean {
+    const rect = el.getBoundingClientRect();
+    return rect.top <= 150 && rect.bottom >= 150;
   }
 
   scrollToSection(id: string): void {
     const target = document.getElementById(id);
-    if (target) {
-      const isWideScreen = window.innerWidth <= 1080;
-      const yOffset = isWideScreen ? 20 : -70;
-      const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
+    if (!target) return;
+
+    const yOffset = this.getYOffset();
+    const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  getYOffset(): number {
+    return window.innerWidth <= 1080 ? 20 : -70;
   }
 
   scrollToTop(event: Event): void {
@@ -45,9 +51,15 @@ export class HeaderComponent {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  activeLang: string = 'en';
-
-  setLanguage(lang: string): void {
+  setLanguage(lang: string) {
     this.activeLang = lang;
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);
+  }
+
+  ngOnInit() {
+    const savedLang = localStorage.getItem('lang') || 'en';
+    this.translate.use(savedLang);
+    this.activeLang = savedLang;
   }
 }

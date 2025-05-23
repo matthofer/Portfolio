@@ -27,6 +27,7 @@ export class ProjectsComponent {
   projects = [
     {
       id: 'el-pollo',
+      path: '/ElPolloLoco',
       number: '1. ',
       titleKey: 'projects.elPollo.title',
       descriptionKey: 'projects.elPollo.description',
@@ -40,9 +41,11 @@ export class ProjectsComponent {
         './assets/img/icons/css.svg',
       ],
       technologiesText: ['HTML', ' JavaScript', ' CSS'],
+      github: 'https://github.com/matthofer/El-Pollo-Loco',
     },
     {
       id: 'join',
+      path: '/JOIN/login.html',
       number: '2. ',
       titleKey: 'projects.join.title',
       descriptionKey: 'projects.join.description',
@@ -57,9 +60,11 @@ export class ProjectsComponent {
         './assets/img/icons/firebase.svg',
       ],
       technologiesText: ['HTML', ' JavaScript', ' CSS', ' Firebase'],
+      github: 'https://github.com/matthofer/JOIN',
     },
     {
       id: 'pokedex',
+      path: '/PokeDex',
       number: '3. ',
       titleKey: 'projects.pokedex.title',
       descriptionKey: 'projects.pokedex.description',
@@ -74,6 +79,7 @@ export class ProjectsComponent {
         './assets/img/icons/restapi.svg',
       ],
       technologiesText: ['HTML', ' JavaScript', ' CSS', ' RestAPI'],
+      github: 'https://github.com/matthofer/Pokedex',
     },
     {
       id: 'ongoing',

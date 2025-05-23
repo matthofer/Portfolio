@@ -83,7 +83,7 @@ section {
   textarea {
     padding: 18px;
     font-size: 18px;
-    color: #fffdfd;
+    color: #fffdfd !important;
     border: 1px solid #89bcd9;
     border-radius: 30px;
     width: 100%;
@@ -134,6 +134,19 @@ section {
       }
     }
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover {
+  box-shadow: 0 0 0px 1000px #313f48 inset !important;
+  -webkit-text-fill-color: #fffdfd !important;
+  caret-color: #fffdfd !important;
+  color: #fffdfd !important;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 .full-width {

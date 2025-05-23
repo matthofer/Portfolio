@@ -1,5 +1,5 @@
 <section>
-  <h2 class="blue">My Projects</h2>
+  <h2 class="blue">{{ "nav.projects" | translate }}</h2>
   <div class="projects-section">
     <div class="tab-bar">
       <button
@@ -8,7 +8,9 @@
         [class.active]="activeTab === project.id"
       >
         {{
-          isSmallScreen ? i + 1 + ". Project" : project.number + project.title
+          isSmallScreen
+            ? i + 1 + ". Project"
+            : project.number + (project.titleKey | translate)
         }}
       </button>
     </div>
@@ -22,7 +24,7 @@
     >
       <div class="container" *ngIf="activeTab === project.id">
         <h3 class="mobile-text-header" *ngIf="isSmallScreen">
-          {{ project.title }}
+          {{ project.titleKey | translate }}
         </h3>
         <div class="project-detail">
           <div class="text-box">
@@ -32,43 +34,59 @@
                 src="./assets/img/icons/headline-dot.svg"
                 alt="icon"
               />
-              <h3>About the project</h3>
-              <span class="mobile-d-none"
-                >Duration: {{ project.duration }}</span
-              >
+              <h3>{{ "projects.about" | translate }}</h3>
+              <span class="mobile-d-none">
+                {{ "projects.duration" | translate }}:
+                {{ project.duration }}
+                {{
+                  project.id !== "ongoing"
+                    ? ("projects.durationUnit" | translate)
+                    : ("projects.pending" | translate)
+                }}
+              </span>
             </div>
-            <p>{{ project.description }}</p>
-            <p *ngIf="project.id === 'ongoing'">Stay tuned for Updates!</p>
+            <p>{{ project.descriptionKey | translate }}</p>
+            <p *ngIf="project.id === 'ongoing'">
+              {{ "projects.stayTuned" | translate }}
+            </p>
             <div class="experience-container">
-              <div class="icon-heading" *ngIf="project.group">
+              <div class="icon-heading" *ngIf="project.groupKey">
                 <img
                   class="heading-icon"
                   src="./assets/img/icons/headline-dot.svg"
                   alt="icon"
                 />
-                <h3>My group work experience</h3>
+                <h3>{{ "projects.group" | translate }}</h3>
               </div>
-              <p class="mgn-top" *ngIf="project.group">{{ project.group }}</p>
+              <p class="mgn-top" *ngIf="project.groupKey">
+                {{ project.groupKey | translate }}
+              </p>
 
-              <div class="icon-heading" *ngIf="project.solo">
+              <div class="icon-heading" *ngIf="project.soloKey">
                 <img
                   class="heading-icon"
                   src="./assets/img/icons/headline-dot.svg"
                   alt="icon"
                 />
-                <h3>What I have learnt</h3>
+                <h3>{{ "projects.solo" | translate }}</h3>
               </div>
-              <p class="mgn-top" *ngIf="project.solo">{{ project.solo }}</p>
+              <p class="mgn-top" *ngIf="project.soloKey">
+                {{ project.soloKey | translate }}
+              </p>
             </div>
           </div>
           <div class="image-box">
             <div class="image-wrapper">
-              <p class="mobile-d-none">Technologies</p>
+              <p class="mobile-d-none">
+                {{ "projects.technologies" | translate }}
+              </p>
               <p *ngIf="isSmallScreen">
-                Technologies: {{ project.technologiesText }}
+                {{ "projects.technologies" | translate }}:
+                {{ project.technologiesText }}
               </p>
               <span *ngIf="isSmallScreen"
-                >Duration: {{ project.duration }}</span
+                >{{ "projects.duration" | translate }}:
+                {{ project.duration }}</span
               >
               <div class="technologies-container" *ngIf="project.technologies">
                 <img
@@ -77,9 +95,9 @@
                   alt="Technology icon"
                 />
               </div>
-              <img [src]="project.image" [alt]="project.title" />
+              <img [src]="project.image" [alt]="project.titleKey | translate" />
               <p class="overlay-text" *ngIf="project.id === 'ongoing'">
-                Coming soon...
+                {{ "projects.comingSoon" | translate }}
               </p>
             </div>
             <div class="btn-container">

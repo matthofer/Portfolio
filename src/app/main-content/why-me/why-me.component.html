@@ -1,21 +1,15 @@
 <section>
-  <h2>Why me</h2>
+  <h2>{{ "why.title" | translate }}</h2>
   <div class="text-container">
     <div class="left-side">
       <img src="./assets/img/icons/location-icon.png" alt="" />
-      <span class="blue">I am </span><span> located near Graz..|</span>
+      <span class="blue">{{ "why.location" | translate }}</span
+      ><span>{{ "why.text" | translate }}</span>
     </div>
     <div class="right-side">
-      <span
-        >I’m passionate about coding because it combines analytical thinking
-        with creativity. <br />
-        I enjoy solving problems, finding clean solutions, and turning ideas
-        into working features. <br />
-        I’m persistent when things get tricky and love collaborating with others
-        to learn, improve, and build better products together.</span
-      >
+      <span>{{ "why.reason" | translate }}</span>
       <a class="btn-container" (click)="scrollToSection('contact')">
-        <button>Let's talk</button>
+        <button>{{ "why.talk" | translate }}</button>
       </a>
     </div>
   </div>

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
@@ -27,12 +28,11 @@ export class ProjectsComponent {
     {
       id: 'el-pollo',
       number: '1. ',
-      title: 'El Pollo Loco',
-      description:
-        'A classical Jump’n’Run game using JavaScript, OOP and Canvas. Help Pepe to find coins and salsa bottles to fight off the evil chickens',
+      titleKey: 'projects.elPollo.title',
+      descriptionKey: 'projects.elPollo.description',
+      soloKey: 'projects.elPollo.solo',
       image: './assets/img/el-pollo-loco.png',
-      duration: '5 weeks',
-      solo: 'Through building El Pollo Loco, I deepened my understanding of object-oriented programming and game logic using JavaScript and HTML5 Canvas. It taught me how to structure a game engine, handle animations, collisions, and create a playable 2D game from scratch.',
+      duration: '5',
       live: 'yes',
       technologies: [
         './assets/img/icons/html.svg',
@@ -44,13 +44,11 @@ export class ProjectsComponent {
     {
       id: 'join',
       number: '2. ',
-      title: 'Join',
-      description:
-        'Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories',
+      titleKey: 'projects.join.title',
+      descriptionKey: 'projects.join.description',
+      groupKey: 'projects.join.group',
       image: './assets/img/join.png',
-      duration: '4 weeks',
-      group:
-        'We were a group of 3. My role was the login and signup pages as well as reusable components. We had a great work flow, good communication and team spirit was always up.',
+      duration: '4',
       live: 'yes',
       technologies: [
         './assets/img/icons/html.svg',
@@ -63,12 +61,11 @@ export class ProjectsComponent {
     {
       id: 'pokedex',
       number: '3. ',
-      title: 'Pokedex',
-      description:
-        'A simple library that provides and catalogues pokemon information, based on the PokeAPI',
+      titleKey: 'projects.pokedex.title',
+      descriptionKey: 'projects.pokedex.description',
+      soloKey: 'projects.pokedex.solo',
       image: './assets/img/pokedex.png',
-      duration: '2 weeks',
-      solo: 'This project taught me how to work with external APIs by integrating the PokeAPI to fetch and display dynamic data. It helped me improve my skills in asynchronous JavaScript, data filtering, and building interactive UI components.',
+      duration: '2',
       live: 'yes',
       technologies: [
         './assets/img/icons/html.svg',
@@ -81,11 +78,10 @@ export class ProjectsComponent {
     {
       id: 'ongoing',
       number: '4. ',
-      title: 'Ongoing Project',
-      description:
-        'Slack Clone App - Messaging Tool for Businesses using Firebase and Angular.',
+      titleKey: 'projects.ongoing.title',
+      descriptionKey: 'projects.ongoing.description',
       image: './assets/img/ongoing.png',
-      duration: 'pending',
+      live: '',
       technologies: [
         './assets/img/icons/angular.svg',
         './assets/img/icons/typescript.svg',

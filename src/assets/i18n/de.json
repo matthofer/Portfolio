@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "why": "Warum ich",
+    "skills": "Skills",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "legal": "Impressum"
+  },
+  "hero": {
+    "name": "Matthias Hofer"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "intro1": "Kontaktiere mich über dieses Formular. Ich freue mich darauf, von dir zu hören, deine Ideen kennenzulernen und mit meiner Arbeit zu deinen Projekten beizutragen.",
+    "intro2": "Du suchst einen Frontend Developer?",
+    "intro3": "Lass uns zusammenarbeiten!",
+    "name": "Dein Name",
+    "email": "Deine E-Mail",
+    "message": "Deine Nachricht",
+    "required": "wird benötigt",
+    "requiredName": "Dein Name wird benötigt",
+    "requiredMail": "Deine E-Mail wird benötigt",
+    "requiredMessage": "Deine Nachricht wird benötigt",
+    "send": "Senden",
+    "success": "Nachricht erfolgreich versendet.",
+    "thankyou": "Vielen Dank!",
+    "privacyNotice1": "Ich habe die",
+    "privacyNotice2": "Datenschutzerklärung",
+    "privacyNotice3": "gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "privacyError": "Bitte stimme der Datenschutzerklärung zu!"
+  },
+  "projects": {
+    "about": "Über das Projekt",
+    "group": "Meine Gruppenarbeit-Erfahrung",
+    "solo": "Was ich gelernt habe",
+    "technologies": "Technologien",
+    "comingSoon": "Kommt bald...",
+    "stayTuned": "Bleib dran für Updates!",
+    "duration": "Dauer",
+    "durationUnit": "Wochen",
+    "pending": "ausstehend",
+
+    "elPollo": {
+      "title": "El Pollo Loco",
+      "description": "Ein klassisches Jump’n’Run-Spiel mit JavaScript, OOP und Canvas. Hilf Pepe dabei, Münzen und Salsa-Flaschen zu sammeln und die bösen Hühner zu besiegen.",
+      "solo": "Beim Bau von El Pollo Loco habe ich mein Verständnis für objektorientierte Programmierung und Spielmechanik vertieft. Ich habe gelernt, wie man eine Spiel-Engine strukturiert, Animationen und Kollisionen handhabt und ein spielbares 2D-Spiel von Grund auf erstellt."
+    },
+    "join": {
+      "title": "Join",
+      "description": "Task Manager im Kanban-Stil. Erstelle und organisiere Aufgaben mit Drag & Drop, ordne Benutzer und Kategorien zu.",
+      "group": "Wir waren ein 3er-Team. Ich war für Login- und Signup-Seiten sowie wiederverwendbare Komponenten zuständig. Unsere Kommunikation und Zusammenarbeit war super."
+    },
+    "pokedex": {
+      "title": "Pokedex",
+      "description": "Eine einfache Bibliothek, die Pokémon-Informationen anhand der PokeAPI bereitstellt.",
+      "solo": "Dieses Projekt hat mir gezeigt, wie man externe APIs integriert. Ich habe mein Wissen über asynchrones JavaScript, Datenfilterung und UI-Komponenten erweitert."
+    },
+    "ongoing": {
+      "title": "Laufendes Projekt",
+      "description": "Slack-ähnliche App – Messaging-Tool für Unternehmen mit Firebase und Angular."
+    }
+  },
+  "skills": {
+    "title": "Meine Skills",
+    "learning": "Ich lerne derzeit",
+    "followup": "und freue mich darauf,<br>bald mehr zeigen<br>zu können.",
+    "talk": "Lass uns reden"
+  },
+  "why": {
+    "title": "Warum ich",
+    "location": "Ich wohne",
+    "text": "in der Nähe von Graz..|",
+    "reason": "Ich liebe Coden, weil es analytisches Denken mit Kreativität verbindet. Ich löse gerne Probleme, finde saubere Lösungen und verwandle Ideen in funktionierende Features. Ich bleibe dran, wenn es knifflig wird, und arbeite gerne im Team, um gemeinsam bessere Produkte zu entwickeln.",
+    "talk": "Lass uns reden"
+  },
+  "imprint": {
+    "title": "Impressum",
+    "nameTitle": "Name & Adresse",
+    "country": "Österreich",
+    "contactTitle": "Kontaktinformation",
+    "responsibleTitle": "Inhaltlich verantwortlich",
+    "disclaimerTitle": "Haftungsausschluss",
+    "disclaimer1": "Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt.<br>Die Nutzung der Website und ihrer Inhalte erfolgt auf eigene Gefahr.",
+    "disclaimer2": "Ich übernehme keine Haftung für materielle oder immaterielle Schäden, die durch den Zugriff auf, die Nutzung oder Nichtnutzung der veröffentlichten Informationen oder durch Missbrauch der Verbindung entstehen.<br>Diese Website kann Links zu externen Websites Dritter enthalten, auf deren Inhalte ich keinen Einfluss habe.<br>Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Zum Zeitpunkt der Verlinkung wurden diese auf mögliche Rechtsverstöße überprüft.<br>Eine dauerhafte inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.",
+    "copyrightTitle": "Urheberrecht",
+    "copyright1": "Die auf dieser Website veröffentlichten Inhalte, Texte, Bilder und Werke unterliegen dem österreichischen Urheberrecht.<br>Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der vorherigen schriftlichen Zustimmung des jeweiligen Autors oder Erstellers.",
+    "copyright2": "Downloads und Kopien dieser Website sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.<br>Sofern Inhalte auf dieser Website nicht von mir erstellt wurden, werden die Urheberrechte Dritter beachtet.<br>Solltest du dennoch auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis, damit betroffene Inhalte umgehend entfernt werden können."
+  }
+}

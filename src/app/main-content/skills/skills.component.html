@@ -1,5 +1,5 @@
 <section>
-  <h2 class="blue">My Skills</h2>
+  <h2 class="blue">{{ "skills.title" | translate }}</h2>
   <div class="text-container">
     <div class="left-side">
       <img
@@ -14,7 +14,7 @@
         src="./assets/img/icons/skill-bg-shape.svg"
         alt=""
       />
-      <span>I am currently learning</span>
+      <span>{{ "skills.learning" | translate }}</span>
       <div class="learn-icon-container">
         <img
           class="learn-icon"
@@ -27,15 +27,11 @@
           alt=""
         />
       </div>
-      <span
-        >and I'm excited <br />
-        to show you more of that <br />
-        once I'm finished.</span
-      >
+      <span [innerHTML]="'skills.followup' | translate"></span>
     </div>
     <div class="btn-wrapper">
       <a class="btn-container" (click)="scrollToSection('contact')">
-        <button>Let's talk</button>
+        <button>{{ "skills.talk" | translate }}</button>
       </a>
     </div>
   </div>

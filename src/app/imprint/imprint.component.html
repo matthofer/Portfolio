@@ -4,60 +4,29 @@
     <a href="">
       <img src="./assets/img/icons/arrow-mobile.svg" alt="" />
     </a>
-    <h2>Imprint</h2>
-    <h3>Name & Address</h3>
+    <h2>{{ "imprint.title" | translate }}</h2>
+    <h3>{{ "imprint.nameTitle" | translate }}</h3>
     <span>
       Matthias Hofer <br />
       Paldau 321 / 3 <br />
       8341 Paldau <br />
-      Östereich
+      {{ "imprint.country" | translate }}
     </span>
-    <h3>Contact information</h3>
+    <h3>{{ "imprint.contactTitle" | translate }}</h3>
     <span
       >{{ email }} <br />
       +43 650 28 23 069
     </span>
-    <h3>Responsible for the content</h3>
+    <h3>{{ "imprint.responsibleTitle" | translate }}</h3>
     <span>Matthias Hofer</span>
-    <h3>Disclaimer</h3>
-    <span
-      >The contents of this website have been created with the greatest possible
-      care. <br />
-      Use of the website and its contents is at your own risk.</span
-    >
-    <br />
-    <br />
-    <span
-      >I assume no liability for material or immaterial damages resulting from
-      access to, use or non-use of the published information, or from misuse of
-      the connection. <br />
-      This website may contain links to external third-party websites, over
-      whose content I have no control. <br />
-      The respective provider or operator is solely responsible for the content
-      of the linked pages. At the time of linking, these were checked for
-      possible legal violations. <br />
-      However, continuous content monitoring of the linked pages is not
-      reasonable without specific indications of a legal violation.</span
-    >
-    <h3>Copyright</h3>
-    <span
-      >The content, texts, images, and works published on this website are
-      subject to austrian copyright law. <br />
-      Reproduction, modification, distribution, or any form of use beyond the
-      limits of copyright law requires prior written permission from the
-      respective author or creator.</span
-    >
-    <br />
-    <br />
-    <span
-      >Downloads and copies of this website are only permitted for private,
-      non-commercial use. <br />
-      If any content on this site was not created by me, the copyrights of third
-      parties are respected. <br />
-      If you nevertheless become aware of a copyright infringement, please
-      provide a corresponding notice so that the affected content can be removed
-      immediately.</span
-    >
+    <h3>{{ "imprint.disclaimerTitle" | translate }}</h3>
+    <span [innerHTML]="'imprint.disclaimer1' | translate"></span>
+    <br /><br />
+    <span [innerHTML]="'imprint.disclaimer2' | translate"></span>
+    <h3>{{ "imprint.copyrightTitle" | translate }}</h3>
+    <span [innerHTML]="'imprint.copyright1' | translate"></span>
+    <br /><br />
+    <span [innerHTML]="'imprint.copyright2' | translate"></span>
   </div>
 </section>
 <app-footer></app-footer>

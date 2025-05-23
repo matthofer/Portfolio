@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "why": "Why me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "footer": {
+    "legal": "Legal notice"
+  },
+  "hero": {
+    "name": "Matthias Hofer"
+  },
+  "contact": {
+    "title": "Contact me",
+    "intro1": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
+    "intro2": "Need a Frontend developer?",
+    "intro3": "Let's work together!",
+    "name": "Your name",
+    "email": "Your email",
+    "message": "Your message",
+    "required": "is required",
+    "requiredName": "Your name is required",
+    "requiredMail": "Your email is required",
+    "requiredMessage": "Your message is required",
+    "send": "Send",
+    "success": "Message sent successfully.",
+    "thankyou": "Thank you!",
+    "privacyNotice1": "I've read the",
+    "privacyNotice2": "privacy policy",
+    "privacyNotice3": "and agree to the processing of my data as outlined.",
+    "privacyError": "Please accept the privacy policy!"
+  },
+  "projects": {
+    "about": "About the project",
+    "group": "My group work experience",
+    "solo": "What I have learnt",
+    "technologies": "Technologies",
+    "comingSoon": "Coming soon...",
+    "stayTuned": "Stay tuned for Updates!",
+    "duration": "Duration",
+    "durationUnit": "weeks",
+    "pending": "pending",
+
+    "elPollo": {
+      "title": "El Pollo Loco",
+      "description": "A classical Jump’n’Run game using JavaScript, OOP and Canvas. Help Pepe to find coins and salsa bottles to fight off the evil chickens.",
+      "solo": "Through building El Pollo Loco, I deepened my understanding of object-oriented programming and game logic using JavaScript and HTML5 Canvas. It taught me how to structure a game engine, handle animations, collisions, and create a playable 2D game from scratch."
+    },
+    "join": {
+      "title": "Join",
+      "description": "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories.",
+      "group": "We were a group of 3. My role was the login and signup pages as well as reusable components. We had a great work flow, good communication and team spirit was always up."
+    },
+    "pokedex": {
+      "title": "Pokedex",
+      "description": "A simple library that provides and catalogues Pokémon information, based on the PokeAPI.",
+      "solo": "This project taught me how to work with external APIs by integrating the PokeAPI to fetch and display dynamic data. It helped me improve my skills in asynchronous JavaScript, data filtering, and building interactive UI components."
+    },
+    "ongoing": {
+      "title": "Ongoing Project",
+      "description": "Slack Clone App – Messaging Tool for Businesses using Firebase and Angular."
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "learning": "I am currently learning",
+    "followup": "and I'm excited<br>to show you more of that<br>once I'm finished.",
+    "talk": "Let's talk"
+  },
+  "why": {
+    "title": "Why me",
+    "location": "I am",
+    "text": "located near Graz..|",
+    "reason": "I’m passionate about coding because it combines analytical thinking with creativity. I enjoy solving problems, finding clean solutions, and turning ideas into working features. I’m persistent when things get tricky and love collaborating with others to learn, improve, and build better products together.",
+    "talk": "Let's talk"
+  },
+  "imprint": {
+    "title": "Imprint",
+    "nameTitle": "Name & Address",
+    "country": "Austria",
+    "contactTitle": "Contact information",
+    "responsibleTitle": "Responsible for the content",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimer1": "The contents of this website have been created with the greatest possible care.<br>Use of the website and its contents is at your own risk.",
+    "disclaimer2": "I assume no liability for material or immaterial damages resulting from access to, use or non-use of the published information, or from misuse of the connection.<br>This website may contain links to external third-party websites, over whose content I have no control.<br>The respective provider or operator is solely responsible for the content of the linked pages. At the time of linking, these were checked for possible legal violations.<br>However, continuous content monitoring of the linked pages is not reasonable without specific indications of a legal violation.",
+    "copyrightTitle": "Copyright",
+    "copyright1": "The content, texts, images, and works published on this website are subject to Austrian copyright law.<br>Reproduction, modification, distribution, or any form of use beyond the limits of copyright law requires prior written permission from the respective author or creator.",
+    "copyright2": "Downloads and copies of this website are only permitted for private, non-commercial use.<br>If any content on this site was not created by me, the copyrights of third parties are respected.<br>If you nevertheless become aware of a copyright infringement, please provide a corresponding notice so that the affected content can be removed immediately."
+  }
+}

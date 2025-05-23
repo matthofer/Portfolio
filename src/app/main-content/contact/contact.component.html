@@ -1,13 +1,12 @@
 <section>
-  <h2 class="blue">Contact me</h2>
+  <h2 class="blue">{{ "contact.title" | translate }}</h2>
   <div class="text-container">
     <div class="text-left">
-      <span
-        >Contact me through this form, I am interested in hearing from you,
-        knowing your ideas and contributing to your projects with my work.</span
+      <span>{{ "contact.intro1" | translate }}</span>
+      <span>{{ "contact.intro2" | translate }}</span>
+      <span class="blue"
+        ><b>{{ "contact.intro3" | translate }}</b></span
       >
-      <span>Need a Frontend developer? </span>
-      <span class="blue"><b>Let's work together!</b></span>
     </div>
     <div class="text-right">
       <div class="text-right-content">
@@ -32,9 +31,9 @@
           for="fullName"
           [class.error]="!fullNameRef.valid && fullNameRef.touched"
         >
-          Your name
+          {{ "contact.name" | translate }}
           <span *ngIf="!fullNameRef.valid && fullNameRef.touched">
-            is required
+            {{ "contact.required" | translate }}
           </span>
         </label>
         <input
@@ -44,8 +43,8 @@
           [placeholder]="
             isSmallScreen
               ? !fullNameRef.valid && fullNameRef.touched
-                ? 'Your name is required'
-                : 'Your name'
+                ? ('contact.requiredName' | translate)
+                : ('contact.name' | translate)
               : ''
           "
           [(ngModel)]="contactData.name"
@@ -62,8 +61,10 @@
           for="email"
           [class.error]="!emailRef.valid && emailRef.touched"
         >
-          Your email
-          <span *ngIf="!emailRef.valid && emailRef.touched"> is required </span>
+          {{ "contact.email" | translate }}
+          <span *ngIf="!emailRef.valid && emailRef.touched">
+            {{ "contact.required" | translate }}
+          </span>
         </label>
         <input
           id="email"
@@ -72,8 +73,8 @@
           [placeholder]="
             isSmallScreen
               ? !emailRef.valid && emailRef.touched
-                ? 'Your email is required'
-                : 'Your email'
+                ? ('contact.requiredMail' | translate)
+                : ('contact.email' | translate)
               : ''
           "
           [(ngModel)]="contactData.email"
@@ -90,8 +91,10 @@
         for="message"
         [class.error]="!message.valid && message.touched"
       >
-        Your message
-        <span *ngIf="!message.valid && message.touched">is required</span>
+        {{ "contact.message" | translate }}
+        <span *ngIf="!message.valid && message.touched">{{
+          "contact.required" | translate
+        }}</span>
       </label>
       <textarea
         id="message"
@@ -99,8 +102,8 @@
         [placeholder]="
           isSmallScreen
             ? !message.valid && message.touched
-              ? 'Your message is required'
-              : 'Your message'
+              ? ('contact.requiredMessage' | translate)
+              : ('contact.message' | translate)
             : ''
         "
         [(ngModel)]="contactData.message"
@@ -139,14 +142,15 @@
         </span>
 
         <span class="privacy-text">
-          I've read the <a href="/imprint">privacy policy</a> and agree to the
-          processing of my data as outlined. <br />
+          {{ "contact.privacyNotice1" | translate }}
+          <a href="/imprint">{{ "contact.privacyNotice2" | translate }}</a>
+          {{ "contact.privacyNotice3" | translate }}<br />
           <br />
           <span
             class="error-privacy"
             *ngIf="!privacyAccepted && (privacyRef.touched || submitted)"
           >
-            Please accept the privacy policy!
+            {{ "contact.privacyError" | translate }}
           </span>
         </span>
       </label>
@@ -156,7 +160,7 @@
           type="submit"
           [disabled]="!contactForm.valid || !privacyAccepted"
         >
-          Send
+          {{ "contact.send" | translate }}
         </button>
       </div>
     </div>
@@ -170,8 +174,8 @@
   </div>
   <div *ngIf="showToast" class="toast-overlay">
     <div class="toast">
-      Message sent successfully. <br />
-      <br />Thank you!
+      {{ "contact.success" | translate }} <br />
+      <br />{{ "contact.thankyou" | translate }}
     </div>
   </div>
 </section>

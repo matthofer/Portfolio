@@ -29,4 +29,22 @@
     <span [innerHTML]="'imprint.copyright2' | translate"></span>
   </div>
 </section>
+<div class="burger-menu" (click)="toggleMenu()">
+  <img [src]="currentIcon" alt="Menu icon" />
+</div>
+<div class="mobile-logo-container">
+  <img src="./assets/img/icons/logo-icon.svg" alt="" />
+  <span class="anta">M.Hofer</span>
+  <span class="blue">developer</span>
+</div>
+<nav class="mobile-nav" *ngIf="menuOpen">
+  <div class="de-en-switch">
+    <span (click)="setLanguage('de')" [class.active]="activeLang === 'de'"
+      >DE</span
+    >
+    <span (click)="setLanguage('en')" [class.active]="activeLang === 'en'"
+      >EN</span
+    >
+  </div>
+</nav>
 <app-footer></app-footer>

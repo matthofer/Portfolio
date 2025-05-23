@@ -34,3 +34,107 @@ section {
     }
   }
 }
+
+.mobile-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 96px;
+  width: 200px;
+  z-index: 900;
+  background-color: #89bcd9;
+  display: flex;
+  justify-content: right;
+  border-bottom-left-radius: 50px;
+}
+
+.de-en-switch {
+  display: flex;
+  align-items: start;
+  padding: 32px 82px;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Josefin Sans";
+
+  span {
+    position: relative;
+    padding: 10px;
+    color: #262e34;
+    transition: color 0.2s;
+    cursor: pointer;
+
+    &.active {
+      color: #f8f5ec;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-image: url("/assets/img/icons/ellipse-bg-shape.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -1;
+      }
+    }
+
+    &:hover {
+      color: #f8f5ec;
+    }
+  }
+}
+
+.mobile-logo-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 16px;
+  color: #f8f5ec;
+  > img {
+    height: 32px;
+    margin-bottom: 2px;
+  }
+}
+
+.burger-menu {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  section {
+    margin-top: 100px;
+    padding: 0 32px;
+    .content-wrapper {
+      padding: 0;
+    }
+  }
+  .mobile-logo-container {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .burger-menu {
+    display: block;
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    z-index: 1000;
+
+    img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+}

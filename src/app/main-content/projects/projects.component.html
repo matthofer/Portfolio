@@ -102,10 +102,12 @@
             </div>
             <div class="btn-container">
               <button class="liblue-bg" *ngIf="project.live">
-                <a class="dark-blue" href="{{ project.path }}">Live Test</a>
+                <a class="dark-blue" href="{{ project.path }}" target="_blank"
+                  >Live Test</a
+                >
               </button>
               <button *ngIf="project.live">
-                <a href="{{ project.github }}">GitHub</a>
+                <a href="{{ project.github }}" target="_blank">GitHub</a>
               </button>
             </div>
           </div>

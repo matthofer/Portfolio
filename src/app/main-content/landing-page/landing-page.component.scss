@@ -138,16 +138,16 @@ section {
   color: #262e34;
   > img {
     position: absolute;
-    top: 40%;
+    top: 40vh;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-25deg);
-    width: clamp(400px, 110vw, 650px);
+    transform: translate(-50%, -50%);
+    width: clamp(280px, 65vw, 520px);
     z-index: 0;
     pointer-events: none;
   }
   .nav-content {
     position: absolute;
-    top: 40%;
+    top: 40vh;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -293,11 +293,7 @@ section {
 
 @media (max-width: 470px) {
   .mobile-nav {
-    img {
-      top: 35%;
-    }
     .nav-content {
-      top: 35%;
       gap: 20px;
     }
     a {
@@ -306,13 +302,139 @@ section {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 600px) {
+  section {
+    gap: 0px;
+    margin-top: 40px;
+  }
   .mobile-nav {
     img {
-      top: 32%;
+      top: 31vh;
     }
     .nav-content {
-      top: 32%;
+      top: 31vh;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-nav {
+    img {
+      top: 28vh;
+    }
+    .nav-content {
+      top: 28vh;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  section {
+    margin-top: 80px;
+  }
+
+  .mobile-nav {
+    img {
+      top: 25vh;
+    }
+    .nav-content {
+      top: 25vh;
+    }
+  }
+
+  .left-side {
+    .mobile-portrait {
+      width: 260px;
+    }
+  }
+
+  .burger-menu {
+    top: 16px;
+    right: 16px;
+  }
+
+  .mobile-logo-container {
+    top: 16px;
+    left: 16px;
+  }
+}
+
+@media (max-width: 344px) and (max-height: 882px) {
+  .mobile-nav {
+    img {
+      top: 35vh;
+    }
+    .nav-content {
+      top: 35vh;
+    }
+  }
+}
+
+@media (max-width: 375px) and (max-height: 667px) {
+  .mobile-nav {
+    img {
+      top: 50vh;
+    }
+    .nav-content {
+      top: 50vh;
+    }
+  }
+}
+
+@media (max-width: 360px) and (max-height: 740px) {
+  .mobile-nav {
+    img {
+      top: 43vh;
+    }
+    .nav-content {
+      top: 43vh;
+    }
+  }
+}
+
+@media (min-width: 540px) and (max-height: 720px) {
+  section {
+    margin-top: 70px;
+  }
+  .mobile-nav {
+    img {
+      top: 48vh;
+    }
+    .nav-content {
+      top: 48vh;
+    }
+  }
+}
+
+@media (max-height: 1368px) and (min-height: 1024px) {
+  .mobile-nav {
+    img {
+      top: 390px;
+      width: 490px;
+    }
+    a {
+      font-size: 38px;
+    }
+    .nav-content {
+      top: 390px;
+    }
+  }
+}
+
+@media (max-height: 600px) and (max-width: 1024px) {
+  section {
+    margin-top: 40px;
+  }
+  .mobile-nav {
+    img {
+      width: 500px;
+      top: 51vh;
+    }
+    .nav-content {
+      top: 51vh;
+    }
+    a {
+      font-size: 38px;
     }
   }
 }

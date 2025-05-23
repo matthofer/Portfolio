@@ -7,6 +7,7 @@
     />
     <img class="portrait" src="./assets/img/portrait.png" alt="" />
     <img
+      *ngIf="!menuOpen"
       class="mobile-portrait"
       src="./assets/img/portrait-mobile.png"
       alt=""
@@ -82,7 +83,7 @@
   <span class="blue">developer</span>
 </div>
 <nav class="mobile-nav" *ngIf="menuOpen">
-  <img src="./assets/img/background-objs/bg-shape.svg" alt="" />
+  <img src="./assets/img/background-objs/bg-shape.png" alt="" />
   <div class="nav-content">
     <a (click)="scrollToSection('why-me')">Why me</a>
     <a (click)="scrollToSection('skills')">Skills</a>

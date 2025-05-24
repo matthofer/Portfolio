@@ -20,7 +20,7 @@ export class LandingPageComponent implements AfterViewInit {
     const target = document.getElementById(id);
     if (target) {
       const isSmallScreen = window.innerWidth <= 1080;
-      const yOffset = isSmallScreen ? 20 : -70;
+      const yOffset = isSmallScreen ? 15 : -70;
       const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }

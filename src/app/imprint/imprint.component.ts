@@ -3,11 +3,18 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-imprint',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, TranslateModule, CommonModule],
+  imports: [
+    HeaderComponent,
+    FooterComponent,
+    TranslateModule,
+    CommonModule,
+    RouterModule,
+  ],
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss',
 })
@@ -22,6 +29,10 @@ export class ImprintComponent {
     this.activeLang = lang;
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
+  }
+
+  ngAfterViewInit(): void {
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
   ngOnInit() {

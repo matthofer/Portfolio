@@ -9,25 +9,29 @@
     <div class="nav-container">
       <nav class="nav-links">
         <a
-          (click)="scrollToSection('why-me')"
+          (click)="navigateToSection('why-me')"
           [class.active]="activeSection === 'why-me'"
-          >{{ "nav.why" | translate }}</a
         >
+          {{ "nav.why" | translate }}
+        </a>
         <a
-          (click)="scrollToSection('skills')"
+          (click)="navigateToSection('skills')"
           [class.active]="activeSection === 'skills'"
-          >{{ "nav.skills" | translate }}</a
         >
+          {{ "nav.skills" | translate }}
+        </a>
         <a
-          (click)="scrollToSection('projects')"
+          (click)="navigateToSection('projects')"
           [class.active]="activeSection === 'projects'"
-          >{{ "nav.projects" | translate }}</a
         >
+          {{ "nav.projects" | translate }}
+        </a>
         <a
-          (click)="scrollToSection('contact')"
+          (click)="navigateToSection('contact')"
           [class.active]="activeSection === 'contact'"
-          >{{ "nav.contact" | translate }}</a
         >
+          {{ "nav.contact" | translate }}
+        </a>
       </nav>
     </div>
     <div>

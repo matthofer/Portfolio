@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -11,21 +12,33 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent implements AfterViewInit {
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService, private router: Router) {}
   menuOpen = false;
   activeLang: string = 'en';
   currentIcon = 'assets/img/icons/burger-default.svg';
 
-  scrollToSection(id: string): void {
-    const target = document.getElementById(id);
-    if (target) {
-      const isSmallScreen = window.innerWidth <= 1080;
-      const yOffset = isSmallScreen ? 15 : -70;
-      const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
+  goToSection(id: string): void {
+    const isHome = this.router.url === '/' || this.router.url.startsWith('/#');
     this.menuOpen = false;
     this.animateToBurger();
+    if (isHome) {
+      this.scrollToId(id);
+    } else {
+      this.router.navigateByUrl('/').then(() => {
+        setTimeout(() => this.scrollToId(id), 50);
+      });
+    }
+  }
+
+  private scrollToId(id: string, attempts = 10): void {
+    const el = document.getElementById(id);
+    if (el) {
+      const yOffset = window.innerWidth <= 1080 ? 0 : -70;
+      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    } else if (attempts > 0) {
+      setTimeout(() => this.scrollToId(id, attempts - 1), 100);
+    }
   }
 
   ngAfterViewInit(): void {

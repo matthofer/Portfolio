@@ -1,0 +1,83 @@
+<app-header></app-header>
+<section>
+  <div class="content-wrapper">
+    <a routerLink="/">
+      <img src="./assets/img/icons/arrow-mobile.svg" alt="" />
+    </a>
+    <h2>{{ "privacy.title" | translate }}</h2>
+    <h3>{{ "privacy.generalTitle" | translate }}</h3>
+    <span [innerHTML]="'privacy.generalText' | translate"></span>
+    <div class="responsible-wrapper">
+      <h3>{{ "privacy.responsibleTitle" | translate }}</h3>
+      <span>Matthias Hofer</span><br />
+      <span>{{ email }}</span
+      ><br />
+      <span>matthias-hofer.com</span>
+    </div>
+    <div class="collection-wrapper">
+      <h3>{{ "privacy.collectionTitle" | translate }}</h3>
+      <span>{{ "privacy.collectionText1" | translate }}</span
+      ><br />
+      <span [innerHTML]="'privacy.collectionText2' | translate"></span><br />
+      <span>* {{ "privacy.collectionList.0" | translate }}</span
+      ><br />
+      <span>* {{ "privacy.collectionList.1" | translate }}</span
+      ><br />
+      <span>* {{ "privacy.collectionList.2" | translate }}</span
+      ><br />
+      <span [innerHTML]="'privacy.collectionText3' | translate"></span>
+    </div>
+    <h3>{{ "privacy.hostingTitle" | translate }}</h3>
+    <span [innerHTML]="'privacy.hostingText' | translate"></span>
+
+    <h3>{{ "privacy.cookiesTitle" | translate }}</h3>
+    <span>{{ "privacy.cookiesText" | translate }}</span>
+
+    <div class="right-wrapper">
+      <h3>{{ "privacy.rightsTitle" | translate }}</h3>
+      <span>{{ "privacy.rightsIntro" | translate }}</span
+      ><br />
+      <span>* {{ "privacy.rightsList.0" | translate }}</span
+      ><br />
+      <span>* {{ "privacy.rightsList.1" | translate }}</span
+      ><br />
+      <span>* {{ "privacy.rightsList.2" | translate }}</span
+      ><br />
+      <span>* {{ "privacy.rightsList.3" | translate }}</span
+      ><br />
+      <span>* {{ "privacy.rightsList.4" | translate }}</span
+      ><br />
+      <span>* {{ "privacy.rightsList.5" | translate }}</span
+      ><br />
+      <span>* {{ "privacy.rightsList.6" | translate }}</span
+      ><br />
+      <span>{{ "privacy.rightsContact" | translate }}</span>
+    </div>
+
+    <div class="changes-wrapper">
+      <h3>{{ "privacy.changesTitle" | translate }}</h3>
+      <span>{{ "privacy.changesText" | translate }}</span
+      ><br />
+      <span>{{ "privacy.lastUpdated" | translate }}</span>
+    </div>
+  </div>
+</section>
+<div class="burger-menu" (click)="toggleMenu()">
+  <img [src]="currentIcon" alt="Menu icon" />
+</div>
+<div class="mobile-logo-container">
+  <img src="./assets/img/icons/logo-icon.svg" alt="" />
+  <span class="anta">M.Hofer</span>
+  <span class="blue">developer</span>
+</div>
+<nav class="mobile-nav" *ngIf="menuOpen">
+  <div class="de-en-switch">
+    <span (click)="setLanguage('de')" [class.active]="activeLang === 'de'"
+      >DE</span
+    >
+    <span (click)="setLanguage('en')" [class.active]="activeLang === 'en'"
+      >EN</span
+    >
+  </div>
+</nav>
+<app-footer></app-footer>

@@ -43,7 +43,7 @@ export class MainContentComponent implements AfterViewInit {
     const observer = new IntersectionObserver(
       this.handleIntersection.bind(this),
       {
-        threshold: 0.1,
+        threshold: 0.2,
       }
     );
     this.sections.forEach((section) => observer.observe(section.nativeElement));

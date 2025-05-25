@@ -87,5 +87,35 @@
     "copyrightTitle": "Urheberrecht",
     "copyright1": "Die auf dieser Website veröffentlichten Inhalte, Texte, Bilder und Werke unterliegen dem österreichischen Urheberrecht.<br>Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der vorherigen schriftlichen Zustimmung des jeweiligen Autors oder Erstellers.",
     "copyright2": "Downloads und Kopien dieser Website sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.<br>Sofern Inhalte auf dieser Website nicht von mir erstellt wurden, werden die Urheberrechte Dritter beachtet.<br>Solltest du dennoch auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis, damit betroffene Inhalte umgehend entfernt werden können."
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "generalTitle": "Allgemeine Informationen",
+    "generalText": "Der Schutz deiner persönlichen Daten ist mir ein wichtiges Anliegen.<br />Diese Datenschutzerklärung informiert dich darüber, welche personenbezogenen Daten auf dieser Website erhoben werden und zu welchem Zweck.",
+    "responsibleTitle": "Verantwortliche Stelle",
+    "collectionTitle": "Erhebung und Verwendung personenbezogener Daten",
+    "collectionText1": "Beim Besuch dieser Website werden keine personenbezogenen Daten automatisch erfasst oder gespeichert.",
+    "collectionText2": "Personenbezogene Daten werden nur erfasst, wenn du das Kontaktformular nutzt.<br />Dabei werden in der Regel folgende Informationen übermittelt:",
+    "collectionList": ["Dein Name", "Deine E-Mail-Adresse", "Deine Nachricht"],
+    "collectionText3": "Diese Daten werden ausschließlich verwendet, um auf deine Kontaktanfrage per E-Mail zu antworten.<br />Es erfolgt keine Weitergabe der Daten an Dritte.",
+    "hostingTitle": "Hosting & Server-Logfiles",
+    "hostingText": "Der Hosting-Provider dieser Website kann automatisch Informationen wie IP-Adresse, Browsertyp, Betriebssystem, Datum und Uhrzeit des Zugriffs speichern.<br />Diese Informationen dienen der technischen Bereitstellung, Sicherheit und Optimierung der Website.<br />Eine personenbezogene Auswertung findet nicht statt.",
+    "cookiesTitle": "Cookies & Tracking",
+    "cookiesText": "Diese Website verwendet keine Cookies oder Tracking-Dienste (z. B. Google Analytics oder Ähnliches).",
+    "rightsTitle": "Deine Rechte",
+    "rightsIntro": "Als betroffene Person stehen dir je nach geltendem Recht folgende Rechte zu:",
+    "rightsList": [
+      "Recht auf Auskunft über gespeicherte Daten",
+      "Recht auf Berichtigung unrichtiger Daten",
+      "Recht auf Löschung („Recht auf Vergessenwerden“)",
+      "Recht auf Einschränkung der Verarbeitung",
+      "Recht auf Datenübertragbarkeit",
+      "Recht auf Widerspruch",
+      "Recht auf Widerruf erteilter Einwilligungen"
+    ],
+    "rightsContact": "Bei Fragen oder Anliegen kannst du dich unter der oben angegebenen E-Mail-Adresse an mich wenden.",
+    "changesTitle": "Änderungen",
+    "changesText": "Ich behalte mir vor, diese Datenschutzerklärung bei Bedarf anzupassen, z. B. aufgrund gesetzlicher Änderungen oder technischer Weiterentwicklungen der Website.",
+    "lastUpdated": "Letzte Aktualisierung: Mai 2025"
   }
 }

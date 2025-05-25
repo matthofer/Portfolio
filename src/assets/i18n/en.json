@@ -87,5 +87,35 @@
     "copyrightTitle": "Copyright",
     "copyright1": "The content, texts, images, and works published on this website are subject to Austrian copyright law.<br>Reproduction, modification, distribution, or any form of use beyond the limits of copyright law requires prior written permission from the respective author or creator.",
     "copyright2": "Downloads and copies of this website are only permitted for private, non-commercial use.<br>If any content on this site was not created by me, the copyrights of third parties are respected.<br>If you nevertheless become aware of a copyright infringement, please provide a corresponding notice so that the affected content can be removed immediately."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "generalTitle": "General Information",
+    "generalText": "The protection of your personal data is an important concern for me.<br />This privacy policy informs you about the personal data that is collected on this website and for what purpose.",
+    "responsibleTitle": "Responsible Entity",
+    "collectionTitle": "Collection and Use of Personal Data",
+    "collectionText1": "No personal data is automatically collected or stored when visiting this website.",
+    "collectionText2": "Personal data is only collected when you use the contact form.<br />The following information is generally transmitted:",
+    "collectionList": ["Your name", "Your e-mail address", "Your message"],
+    "collectionText3": "This data is used solely to respond to your contact request via email.<br />No data will be shared with third parties.",
+    "hostingTitle": "Hosting & Server-Logfiles",
+    "hostingText": "The hosting provider of this website may automatically store information such as IP address, browser type, operating system, date and time of access.<br />This information is used for technical provision, security, and optimization of the website.<br />No personal evaluation is conducted.",
+    "cookiesTitle": "Cookies & Tracking",
+    "cookiesText": "This website does not use cookies or tracking (e.g., Google Analytics or similar).",
+    "rightsTitle": "Your rights",
+    "rightsIntro": "As a data subject, you have the following rights, depending on the applicable law:",
+    "rightsList": [
+      "Right to access stored data",
+      "Right to rectify incorrect data",
+      "Right to erasure (\"right to be forgotten\")",
+      "Right to restriction of processing",
+      "Right to data portability",
+      "Right to object",
+      "Right to withdraw consent at any time"
+    ],
+    "rightsContact": "For any concerns or questions, you can contact me at the email address provided above.",
+    "changesTitle": "Changes",
+    "changesText": "I reserve the right to adjust this privacy policy as necessary, for example, due to changes in legal requirements or technical enhancements of the website.",
+    "lastUpdated": "Last updated: May 2025"
   }
 }

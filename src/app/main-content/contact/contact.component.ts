@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule],
+  imports: [CommonModule, FormsModule, TranslateModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -71,13 +72,22 @@ export class ContactComponent {
     console.log('Form data:', this.contactData);
     form.resetForm();
     this.submitted = false;
+    this.scrollToContact();
     this.showToast = true;
     this.lockBodyScroll();
-
     setTimeout(() => {
       this.unlockBodyScroll();
       this.showToast = false;
     }, 3000);
+  }
+
+  scrollToContact(): void {
+    const el = document.getElementById('contact');
+    if (el) {
+      const yOffset = window.innerWidth <= 1080 ? 40 : -100;
+      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   }
 
   lockBodyScroll(): void {

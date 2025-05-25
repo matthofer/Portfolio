@@ -17,6 +17,7 @@ section {
   justify-content: center;
   flex-direction: column;
   max-width: 1440px;
+  margin-bottom: 160px;
 }
 
 .text-container {
@@ -208,8 +209,9 @@ input[type="checkbox"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: all;
   animation: fadeInOutOverlay 3s forwards;
-  z-index: 999;
+  z-index: 9990;
   .toast {
     text-align: center;
     background-color: #89bcd9;
@@ -219,13 +221,14 @@ input[type="checkbox"] {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     animation: fadeInOutToast 3s forwards;
     font-size: 18px;
-    z-index: 1999;
+    z-index: 9999;
   }
 }
 
 .up-arrow-btn {
   display: none;
   margin-top: 72px;
+  margin-bottom: 124px;
   > img {
     border-radius: 18px;
     transition: background-color 125ms ease-in-out;
@@ -290,6 +293,10 @@ input[type="checkbox"] {
     padding-top: 60px;
   }
 
+  .content-wrapper {
+    margin-bottom: 0;
+  }
+
   .top-arrow {
     display: none;
   }
@@ -350,5 +357,11 @@ input[type="checkbox"] {
 @media (max-width: 370px) {
   .text-container {
     font-size: 15.5px;
+  }
+}
+
+@media (max-height: 1024px) {
+  .toast-overlay {
+    height: 118vh;
   }
 }

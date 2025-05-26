@@ -4,7 +4,7 @@ section {
   align-items: center;
   justify-content: center;
   gap: 100px;
-  margin-top: 70px;
+  margin-top: 80px;
   margin-left: 32px;
   margin-right: 32px;
 }
@@ -124,30 +124,53 @@ section {
   z-index: 100;
 }
 
-.burger-menu {
+.mobile-header {
   display: none;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, #262e34be 80%, transparent 100%);
+  z-index: 999;
+  .mobile-logo-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-size: 16px;
+    color: #f8f5ec;
+    cursor: pointer;
+    > img {
+      height: 32px;
+      margin-bottom: 2px;
+    }
+  }
+  .burger-menu {
+    display: none;
+  }
 }
 
 .mobile-nav {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
   z-index: 999;
   color: #262e34;
+  height: 0;
   > img {
     position: absolute;
-    top: 40vh;
+    top: 22vh;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: clamp(280px, 65vw, 520px);
+    width: clamp(290px, 65vw, 520px);
     z-index: 0;
     pointer-events: none;
+    margin-top: 60px;
   }
   .nav-content {
     position: absolute;
-    top: 40vh;
+    top: 22vh;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -160,6 +183,7 @@ section {
     z-index: 1;
     pointer-events: auto;
     text-align: center;
+    margin-top: 60px;
   }
   a {
     font-size: 32px;
@@ -171,19 +195,6 @@ section {
     &:hover {
       color: #f8f5ec;
     }
-  }
-}
-
-.mobile-logo-container {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  font-size: 16px;
-  color: #f8f5ec;
-  > img {
-    height: 32px;
-    margin-bottom: 2px;
   }
 }
 
@@ -278,7 +289,7 @@ section {
       top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: clamp(280px, 60vw, 500px);
+      width: clamp(280px, 50vw, 500px);
       object-fit: cover;
       object-position: top;
       z-index: 2;
@@ -293,7 +304,7 @@ section {
 @media (max-width: 1080px) {
   section {
     flex-direction: column;
-    margin-top: 120px;
+    margin-top: 0;
     margin-bottom: 40px;
     gap: 60px;
     height: auto;
@@ -306,26 +317,43 @@ section {
     display: none;
   }
 
-  .mobile-logo-container {
-    position: absolute;
-    top: 32px;
-    left: 32px;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  .burger-menu {
+  .mobile-header {
     display: block;
-    position: absolute;
-    top: 32px;
-    right: 32px;
-    z-index: 1000;
+    .mobile-logo-container {
+      position: fixed;
+      top: 24px;
+      left: 32px;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+    }
 
+    .burger-menu {
+      display: block;
+      position: fixed;
+      top: 40px;
+      right: 32px;
+      z-index: 1000;
+
+      img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    gap: 0px;
+  }
+  .mobile-nav {
     img {
-      width: 100%;
-      height: auto;
-      cursor: pointer;
+      top: 25vh;
+    }
+    .nav-content {
+      top: 25vh;
     }
   }
 }
@@ -334,6 +362,10 @@ section {
   .mobile-nav {
     .nav-content {
       gap: 20px;
+      top: 21vh;
+    }
+    img {
+      top: 21vh;
     }
     a {
       font-size: 26px;
@@ -341,17 +373,13 @@ section {
   }
 }
 
-@media (max-width: 600px) {
-  section {
-    gap: 0px;
-    margin-top: 40px;
-  }
+@media (max-width: 420px) {
   .mobile-nav {
     img {
-      top: 31vh;
+      top: 19vh;
     }
     .nav-content {
-      top: 31vh;
+      top: 19vh;
     }
   }
 }
@@ -359,25 +387,21 @@ section {
 @media (max-width: 400px) {
   .mobile-nav {
     img {
-      top: 28vh;
+      top: 17vh;
     }
     .nav-content {
-      top: 28vh;
+      top: 17vh;
     }
   }
 }
 
 @media (max-width: 370px) {
-  section {
-    margin-top: 80px;
-  }
-
   .mobile-nav {
     img {
-      top: 25vh;
+      top: 14vh;
     }
     .nav-content {
-      top: 25vh;
+      top: 14vh;
     }
   }
 
@@ -387,24 +411,40 @@ section {
     }
   }
 
-  .burger-menu {
-    top: 16px;
-    right: 16px;
-  }
+  .mobile-header {
+    height: 110px;
+    .burger-menu {
+      top: 32px;
+      right: 16px;
+    }
 
-  .mobile-logo-container {
-    top: 16px;
-    left: 16px;
+    .mobile-logo-container {
+      top: 16px;
+      left: 16px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-nav {
+    img {
+      top: 11vh;
+    }
+    .nav-content {
+      top: 11vh;
+    }
   }
 }
 
 @media (max-width: 344px) and (max-height: 882px) {
   .mobile-nav {
     img {
-      top: 35vh;
+      top: 13.7vh;
+      margin-top: 90px;
     }
     .nav-content {
-      top: 35vh;
+      top: 13.7vh;
+      margin-top: 90px;
     }
   }
 }
@@ -412,21 +452,25 @@ section {
 @media (max-width: 375px) and (max-height: 667px) {
   .mobile-nav {
     img {
-      top: 50vh;
+      top: 19vh !important;
+      margin-top: 100px !important;
     }
     .nav-content {
-      top: 50vh;
+      top: 19vh !important;
+      margin-top: 100px !important;
     }
   }
 }
 
-@media (max-width: 360px) and (max-height: 740px) {
+@media (max-width: 390px) and (max-height: 844px) {
   .mobile-nav {
     img {
-      top: 43vh;
+      top: 18vh;
+      margin-top: 80px;
     }
     .nav-content {
-      top: 43vh;
+      top: 18vh;
+      margin-top: 80px;
     }
   }
 }
@@ -437,10 +481,10 @@ section {
   }
   .mobile-nav {
     img {
-      top: 48vh;
+      top: 33vh;
     }
     .nav-content {
-      top: 48vh;
+      top: 33vh;
     }
   }
 }
@@ -448,32 +492,47 @@ section {
 @media (max-height: 1368px) and (min-height: 1024px) {
   .mobile-nav {
     img {
-      top: 390px;
+      top: 170px;
       width: 490px;
+      margin-top: 120px;
     }
     a {
       font-size: 38px;
     }
     .nav-content {
-      top: 390px;
+      top: 170px;
+      margin-top: 120px;
     }
   }
 }
 
 @media (max-height: 600px) and (max-width: 1024px) {
   section {
-    margin-top: 40px;
+    margin-top: 0;
   }
   .mobile-nav {
     img {
       width: 500px;
-      top: 51vh;
+      top: 41vh;
+      margin-top: 20px;
     }
     .nav-content {
-      top: 51vh;
+      top: 41vh;
+      margin-top: 20px;
     }
     a {
       font-size: 38px;
+    }
+  }
+
+  .mobile-header {
+    height: 100px;
+    .burger-menu {
+      top: 28px;
+    }
+
+    .mobile-logo-container {
+      top: 12px;
     }
   }
 }

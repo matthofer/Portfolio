@@ -1,3 +1,30 @@
+<div class="mobile-header">
+  <div class="burger-menu" (click)="toggleMenu()">
+    <img [src]="currentIcon" alt="Menu icon" />
+  </div>
+  <div (click)="scrollToTop($event)" class="mobile-logo-container">
+    <img src="./assets/img/icons/logo-icon.svg" alt="" />
+    <span class="anta">M.Hofer</span>
+    <span class="blue">developer</span>
+  </div>
+</div>
+<div class="mobile-nav" *ngIf="menuOpen">
+  <img src="./assets/img/background-objs/bg-shape.png" alt="" />
+  <div class="nav-content">
+    <a (click)="goToSection('why-me')">{{ "nav.why" | translate }}</a>
+    <a (click)="goToSection('skills')">{{ "nav.skills" | translate }}</a>
+    <a (click)="goToSection('projects')">{{ "nav.projects" | translate }}</a>
+    <a (click)="goToSection('contact')">{{ "nav.contact" | translate }}</a>
+    <div class="de-en-switch">
+      <span (click)="setLanguage('de')" [class.active]="activeLang === 'de'"
+        >DE</span
+      >
+      <span (click)="setLanguage('en')" [class.active]="activeLang === 'en'"
+        >EN</span
+      >
+    </div>
+  </div>
+</div>
 <section>
   <div class="left-side">
     <img
@@ -7,7 +34,6 @@
     />
     <img class="portrait" src="./assets/img/portrait.png" alt="" />
     <img
-      *ngIf="!menuOpen"
       class="mobile-portrait"
       src="./assets/img/portrait-mobile.png"
       alt=""
@@ -74,29 +100,4 @@
     </a>
   </div>
 </section>
-<div class="burger-menu" (click)="toggleMenu()">
-  <img [src]="currentIcon" alt="Menu icon" />
-</div>
-<div class="mobile-logo-container">
-  <img src="./assets/img/icons/logo-icon.svg" alt="" />
-  <span class="anta">M.Hofer</span>
-  <span class="blue">developer</span>
-</div>
-<nav class="mobile-nav" *ngIf="menuOpen">
-  <img src="./assets/img/background-objs/bg-shape.png" alt="" />
-  <div class="nav-content">
-    <a (click)="goToSection('why-me')">{{ "nav.why" | translate }}</a>
-    <a (click)="goToSection('skills')">{{ "nav.skills" | translate }}</a>
-    <a (click)="goToSection('projects')">{{ "nav.projects" | translate }}</a>
-    <a (click)="goToSection('contact')">{{ "nav.contact" | translate }}</a>
-    <div class="de-en-switch">
-      <span (click)="setLanguage('de')" [class.active]="activeLang === 'de'"
-        >DE</span
-      >
-      <span (click)="setLanguage('en')" [class.active]="activeLang === 'en'"
-        >EN</span
-      >
-    </div>
-  </div>
-</nav>
 <app-header class="sticky-header"></app-header>

@@ -7,17 +7,18 @@
         (click)="setActiveTab(project.id)"
         [class.active]="activeTab === project.id"
       >
-        {{
+        {{ project.number + (project.titleKey | translate) }}
+        <!-- {{
           isSmallScreen
             ? i + 1 + ". Project"
             : project.number + (project.titleKey | translate)
-        }}
+        }} -->
       </button>
     </div>
 
     <div
       class="tab-content"
-      [class.brd-rad-right]="isVerySmallScreen && project.id === 'ongoing'"
+      [class.brd-rad-right]="isVerySmallScreen && project.id === 'join'"
       [class.brd-rad-left]="isVerySmallScreen && project.id === 'el-pollo'"
       *ngFor="let project of projects"
       [class.active]="activeTab === project.id"

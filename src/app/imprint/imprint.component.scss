@@ -3,7 +3,7 @@ section {
   flex-direction: column;
   align-items: center;
   padding: 0 60px;
-  margin-bottom: 80px;
+  height: calc(100vh - 109px);
   .content-wrapper {
     max-width: 1440px;
     width: 100%;
@@ -108,6 +108,13 @@ section {
   display: none;
 }
 
+.sticky-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+}
+
 @media (max-width: 1080px) {
   section {
     margin-top: 100px;
@@ -140,8 +147,10 @@ section {
   }
 }
 
-@media (min-height: 1266px) and (max-width: 1024px) {
-  section {
-    margin-bottom: 18.5dvh;
+@media (max-height: 1140px) {
+  .sticky-footer {
+    position: relative;
+    margin-top: 80px;
+    width: 99.59vw;
   }
 }

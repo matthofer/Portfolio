@@ -171,18 +171,20 @@ p {
       display: flex;
       justify-content: space-around;
       margin-top: 32px;
-      > button {
-        font-family: "Josefin Sans";
-        width: 120px;
-        height: 48px;
+      a {
+        text-decoration: none;
         border-radius: 30px;
-        background-color: transparent;
         border: #89bcd9 solid 1px;
-        transition: background-color 125ms ease-in-out;
-        a {
-          text-decoration: none;
+        > button {
+          font-family: "Josefin Sans";
+          width: 120px;
+          height: 48px;
           font-size: 17px;
+          border: none;
+          background-color: transparent;
+          transition: background-color 125ms ease-in-out;
           color: #89bcd9;
+          cursor: pointer;
         }
         &:hover {
           background-color: #3d4a52;
@@ -198,18 +200,20 @@ p {
   justify-content: center;
   margin-top: 32px;
   gap: 20px;
-  > button {
-    font-family: "Josefin Sans";
-    width: 120px;
-    height: 48px;
+  a {
+    text-decoration: none;
     border-radius: 30px;
-    background-color: transparent;
     border: #89bcd9 solid 1px;
-    transition: background-color 125ms ease-in-out;
-    a {
-      text-decoration: none;
+    > button {
+      font-family: "Josefin Sans";
+      width: 120px;
+      height: 48px;
       font-size: 17px;
+      border: none;
+      background-color: transparent;
+      transition: background-color 125ms ease-in-out;
       color: #89bcd9;
+      cursor: pointer;
     }
     &:hover {
       background-color: #3d4a52;

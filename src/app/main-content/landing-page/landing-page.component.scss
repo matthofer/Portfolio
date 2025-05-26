@@ -35,7 +35,7 @@ section {
   }
   .portrait {
     position: absolute;
-    top: 65%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
@@ -46,7 +46,7 @@ section {
 
   .bg-shape {
     position: absolute;
-    top: 65%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-25deg);
     width: 814px;
@@ -371,10 +371,10 @@ section {
   }
 }
 
-@media (min-height: 1025px) and (min-width: 1380px) {
+@media (min-height: 990px) and (min-width: 1380px) {
   .content-wrapper {
     position: absolute;
-    bottom: 129px;
+    bottom: 109px;
     height: auto;
   }
 }

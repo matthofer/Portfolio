@@ -28,7 +28,7 @@ section {
 .left-side {
   max-width: 596px;
   width: 100%;
-  aspect-ratio: 1 / 1.1;
+  aspect-ratio: 1 / 0.9;
   position: relative;
   .mobile-portrait {
     display: none;
@@ -371,10 +371,10 @@ section {
   }
 }
 
-@media (min-height: 1066px) and (min-width: 1380px) {
+@media (min-height: 1025px) and (min-width: 1380px) {
   .content-wrapper {
     position: absolute;
-    bottom: 109px;
+    bottom: 129px;
     height: auto;
   }
 }

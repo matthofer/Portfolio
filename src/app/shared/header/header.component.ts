@@ -72,8 +72,15 @@ export class HeaderComponent {
   }
 
   scrollToTop(event: Event): void {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const isHome = this.router.url === '/' || this.router.url.startsWith('/#');
+    if (isHome) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      this.router.navigateByUrl('/').then(() => {
+        setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
+      });
+    }
     this.activeSection = '';
   }
 

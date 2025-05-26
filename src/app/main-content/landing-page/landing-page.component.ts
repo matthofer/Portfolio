@@ -33,11 +33,23 @@ export class LandingPageComponent implements AfterViewInit {
   private scrollToId(id: string, attempts = 10): void {
     const el = document.getElementById(id);
     if (el) {
-      const yOffset = window.innerWidth <= 1080 ? 0 : -70;
+      const yOffset = window.innerWidth <= 1080 ? -70 : -70;
       const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     } else if (attempts > 0) {
       setTimeout(() => this.scrollToId(id, attempts - 1), 100);
+    }
+  }
+
+  scrollToTop(event: Event): void {
+    const isHome = this.router.url === '/' || this.router.url.startsWith('/#');
+    if (isHome) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      this.router.navigateByUrl('/').then(() => {
+        setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
+      });
     }
   }
 
@@ -102,7 +114,7 @@ export class LandingPageComponent implements AfterViewInit {
 
   handleResize(): void {
     if (window.innerWidth >= 1080 && this.menuOpen) {
-      this.menuOpen = false;
+      this.toggleMenu();
     }
   }
 }

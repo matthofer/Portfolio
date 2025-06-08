@@ -35,13 +35,14 @@ section {
   }
   .portrait {
     position: absolute;
-    top: 60%;
+    top: 66%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
+    width: 640px;
     object-fit: cover;
     object-position: top;
     z-index: 2;
+    margin-left: 60px;
   }
 
   .bg-shape {
@@ -49,7 +50,7 @@ section {
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-25deg);
-    width: 814px;
+    width: 900px;
     z-index: 1;
     animation: unRotateAndTint 125ms ease-in-out forwards;
   }
